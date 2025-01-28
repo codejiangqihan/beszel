@@ -8,7 +8,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible
 	github.com/containrrr/shoutrrr v0.8.0
 	github.com/gliderlabs/ssh v0.3.8
-	github.com/goccy/go-json v0.10.4
+	github.com/goccy/go-json v0.10.5
 	github.com/pocketbase/dbx v1.11.0
 	github.com/pocketbase/pocketbase v0.24.1
 	github.com/rhysd/go-github-selfupdate v1.2.3
