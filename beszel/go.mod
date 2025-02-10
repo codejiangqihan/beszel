@@ -15,7 +15,7 @@ require (
 	github.com/shirou/gopsutil/v4 v4.24.12
 	github.com/spf13/cast v1.7.1
 	github.com/spf13/cobra v1.8.1
-	golang.org/x/crypto v0.31.0
+	golang.org/x/crypto v0.33.0
 	golang.org/x/exp v0.0.0-20250103183323-7d7fa50e5329
 	gopkg.in/yaml.v3 v3.0.1
 )
@@ -82,10 +82,10 @@ require (
 	golang.org/x/image v0.23.0 // indirect
 	golang.org/x/net v0.33.0 // indirect
 	golang.org/x/oauth2 v0.25.0 // indirect
-	golang.org/x/sync v0.10.0 // indirect
-	golang.org/x/sys v0.29.0 // indirect
-	golang.org/x/term v0.28.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/sync v0.11.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/term v0.29.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da // indirect
 	google.golang.org/api v0.214.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250102185135-69823020774d // indirect
