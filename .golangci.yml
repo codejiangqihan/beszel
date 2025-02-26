@@ -1,0 +1,20 @@
+linters:
+  enable:
+    - gofmt       # 检查代码格式
+    - govet       # 检查潜在错误
+    - errcheck    # 检查未处理的错误
+    - staticcheck # 高级静态分析
+  disable:
+    - unused      # 禁用未使用变量检查
+
+linters-settings:
+  govet:
+    check-shadowing: true
+  errcheck:
+    check-type-assertions: true
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - errcheck  # 测试文件中忽略 errcheck
