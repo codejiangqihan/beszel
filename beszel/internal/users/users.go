@@ -5,14 +5,12 @@ import (
 	"beszel/migrations"
 	"log"
 	"net/http"
-	"strings"
 
-	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/core"
 )
 
 type UserManager struct {
-	app *pocketbase.PocketBase
+	app core.App
 }
 
 type UserSettings struct {
@@ -22,7 +20,7 @@ type UserSettings struct {
 	// Language             string   `json:"lang"`
 }
 
-func NewUserManager(app *pocketbase.PocketBase) *UserManager {
+func NewUserManager(app core.App) *UserManager {
 	return &UserManager{
 		app: app,
 	}
@@ -98,9 +96,6 @@ func (um *UserManager) CreateFirstUser(e *core.RequestEvent) error {
 	user.SetPassword(data.Password)
 	user.Set("role", "admin")
 	user.Set("verified", true)
-	if username := strings.Split(data.Email, "@")[0]; len(username) > 2 {
-		user.Set("username", username)
-	}
 	if err := um.app.Save(user); err != nil {
 		return e.JSON(http.StatusInternalServerError, map[string]string{"err": err.Error()})
 	}

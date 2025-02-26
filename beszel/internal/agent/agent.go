@@ -8,11 +8,13 @@ import (
 	"log/slog"
 	"os"
 	"strings"
+	"sync"
 
 	"github.com/shirou/gopsutil/v4/common"
 )
 
 type Agent struct {
+	sync.Mutex                                  // Used to lock agent while collecting data
 	debug            bool                       // true if LOG_LEVEL is set to debug
 	zfs              bool                       // true if system has arcstats
 	memCalc          string                     // Memory calculation formula
@@ -28,19 +30,16 @@ type Agent struct {
 }
 
 func NewAgent() *Agent {
-	return &Agent{
-		sensorsContext: context.Background(),
-		memCalc:        os.Getenv("MEM_CALC"),
-		fsStats:        make(map[string]*system.FsStats),
+	agent := &Agent{
+		fsStats: make(map[string]*system.FsStats),
 	}
-}
+	agent.memCalc, _ = GetEnv("MEM_CALC")
 
-func (a *Agent) Run(pubKey []byte, addr string) {
 	// Set up slog with a log level determined by the LOG_LEVEL env var
-	if logLevelStr, exists := os.LookupEnv("LOG_LEVEL"); exists {
+	if logLevelStr, exists := GetEnv("LOG_LEVEL"); exists {
 		switch strings.ToLower(logLevelStr) {
 		case "debug":
-			a.debug = true
+			agent.debug = true
 			slog.SetLogLoggerLevel(slog.LevelDebug)
 		case "warn":
 			slog.SetLogLoggerLevel(slog.LevelWarn)
@@ -52,45 +51,58 @@ func (a *Agent) Run(pubKey []byte, addr string) {
 	slog.Debug(beszel.Version)
 
 	// Set sensors context (allows overriding sys location for sensors)
-	if sysSensors, exists := os.LookupEnv("SYS_SENSORS"); exists {
+	if sysSensors, exists := GetEnv("SYS_SENSORS"); exists {
 		slog.Info("SYS_SENSORS", "path", sysSensors)
-		a.sensorsContext = context.WithValue(a.sensorsContext,
+		agent.sensorsContext = context.WithValue(agent.sensorsContext,
 			common.EnvKey, common.EnvMap{common.HostSysEnvKey: sysSensors},
 		)
+	} else {
+		agent.sensorsContext = context.Background()
 	}
 
 	// Set sensors whitelist
-	if sensors, exists := os.LookupEnv("SENSORS"); exists {
-		a.sensorsWhitelist = make(map[string]struct{})
+	if sensors, exists := GetEnv("SENSORS"); exists {
+		agent.sensorsWhitelist = make(map[string]struct{})
 		for _, sensor := range strings.Split(sensors, ",") {
 			if sensor != "" {
-				a.sensorsWhitelist[sensor] = struct{}{}
+				agent.sensorsWhitelist[sensor] = struct{}{}
 			}
 		}
 	}
 
 	// initialize system info / docker manager
-	a.initializeSystemInfo()
-	a.initializeDiskInfo()
-	a.initializeNetIoStats()
-	a.dockerManager = newDockerManager(a)
+	agent.initializeSystemInfo()
+	agent.initializeDiskInfo()
+	agent.initializeNetIoStats()
+	agent.dockerManager = newDockerManager(agent)
 
 	// initialize GPU manager
 	if gm, err := NewGPUManager(); err != nil {
 		slog.Debug("GPU", "err", err)
 	} else {
-		a.gpuManager = gm
+		agent.gpuManager = gm
 	}
 
 	// if debugging, print stats
-	if a.debug {
-		slog.Debug("Stats", "data", a.gatherStats())
+	if agent.debug {
+		slog.Debug("Stats", "data", agent.gatherStats())
 	}
 
-	a.startServer(pubKey, addr)
+	return agent
+}
+
+// GetEnv retrieves an environment variable with a "BESZEL_AGENT_" prefix, or falls back to the unprefixed key.
+func GetEnv(key string) (value string, exists bool) {
+	if value, exists = os.LookupEnv("BESZEL_AGENT_" + key); exists {
+		return value, exists
+	}
+	// Fallback to the old unprefixed key
+	return os.LookupEnv(key)
 }
 
 func (a *Agent) gatherStats() system.CombinedData {
+	a.Lock()
+	defer a.Unlock()
 	slog.Debug("Getting stats")
 	systemData := system.CombinedData{
 		Stats: a.getSystemStats(),

@@ -138,6 +138,13 @@ func (a *Agent) getSystemStats() system.Stats {
 	}
 
 	// network stats
+	if len(a.netInterfaces) == 0 {
+		// if no network interfaces, initialize again
+		// this is a fix if agent started before network is online (#466)
+		// maybe refactor this in the future to not cache interface names at all so we
+		// don't miss an interface that's been added after agent started in any circumstance
+		a.initializeNetIoStats()
+	}
 	if netIO, err := psutilNet.IOCounters(true); err == nil {
 		secondsElapsed := time.Since(a.netIoStats.Time).Seconds()
 		a.netIoStats.Time = time.Now()
@@ -178,44 +185,19 @@ func (a *Agent) getSystemStats() system.Stats {
 	}
 
 	// temperatures (skip if sensors whitelist is set to empty string)
-	if a.sensorsWhitelist != nil && len(a.sensorsWhitelist) == 0 {
-		slog.Debug("Skipping temperature collection")
-	} else {
-		temps, err := sensors.TemperaturesWithContext(a.sensorsContext)
-		if err != nil {
-			slog.Debug("Sensor error", "err", err)
-		}
-		slog.Debug("Temperature", "sensors", temps)
-		if len(temps) > 0 {
-			systemStats.Temperatures = make(map[string]float64, len(temps))
-			for i, sensor := range temps {
-				// skip if temperature is 0
-				if sensor.Temperature <= 0 || sensor.Temperature >= 200 {
-					continue
-				}
-				if _, ok := systemStats.Temperatures[sensor.SensorKey]; ok {
-					// if key already exists, append int to key
-					systemStats.Temperatures[sensor.SensorKey+"_"+strconv.Itoa(i)] = twoDecimals(sensor.Temperature)
-				} else {
-					systemStats.Temperatures[sensor.SensorKey] = twoDecimals(sensor.Temperature)
-				}
-			}
-			// remove sensors from systemStats if whitelist exists and sensor is not in whitelist
-			// (do this here instead of in initial loop so we have correct keys if int was appended)
-			if a.sensorsWhitelist != nil {
-				for key := range systemStats.Temperatures {
-					if _, nameInWhitelist := a.sensorsWhitelist[key]; !nameInWhitelist {
-						delete(systemStats.Temperatures, key)
-					}
-				}
-			}
-		}
+	err = a.updateTemperatures(&systemStats)
+	if err != nil {
+		slog.Error("Error getting temperatures", "err", err)
 	}
 
 	// GPU data
 	if a.gpuManager != nil {
+		// reset high gpu percent
+		a.systemInfo.GpuPct = 0
+		// get current GPU data
 		if gpuData := a.gpuManager.GetCurrentData(); len(gpuData) > 0 {
 			systemStats.GPUData = gpuData
+
 			// add temperatures
 			if systemStats.Temperatures == nil {
 				systemStats.Temperatures = make(map[string]float64, len(gpuData))
@@ -224,6 +206,8 @@ func (a *Agent) getSystemStats() system.Stats {
 				if gpu.Temperature > 0 {
 					systemStats.Temperatures[gpu.Name] = gpu.Temperature
 				}
+				// update high gpu percent for dashboard
+				a.systemInfo.GpuPct = max(a.systemInfo.GpuPct, gpu.Usage)
 			}
 		}
 	}
@@ -237,6 +221,60 @@ func (a *Agent) getSystemStats() system.Stats {
 	slog.Debug("sysinfo", "data", a.systemInfo)
 
 	return systemStats
+}
+
+func (a *Agent) updateTemperatures(systemStats *system.Stats) error {
+	// skip if sensors whitelist is set to empty string
+	if a.sensorsWhitelist != nil && len(a.sensorsWhitelist) == 0 {
+		slog.Debug("Skipping temperature collection")
+		return nil
+	}
+
+	primarySensor, primarySensorIsDefined := GetEnv("PRIMARY_SENSOR")
+
+	// reset high temp
+	a.systemInfo.DashboardTemp = 0
+
+	// get sensor data
+	temps, err := sensors.TemperaturesWithContext(a.sensorsContext)
+	if err != nil {
+		return err
+	}
+	slog.Debug("Temperature", "sensors", temps)
+
+	// return if no sensors
+	if len(temps) == 0 {
+		return nil
+	}
+
+	systemStats.Temperatures = make(map[string]float64, len(temps))
+	for i, sensor := range temps {
+		// skip if temperature is unreasonable
+		if sensor.Temperature <= 0 || sensor.Temperature >= 200 {
+			continue
+		}
+		sensorName := sensor.SensorKey
+		if _, ok := systemStats.Temperatures[sensorName]; ok {
+			// if key already exists, append int to key
+			sensorName = sensorName + "_" + strconv.Itoa(i)
+		}
+		// skip if not in whitelist
+		if a.sensorsWhitelist != nil {
+			if _, nameInWhitelist := a.sensorsWhitelist[sensorName]; !nameInWhitelist {
+				continue
+			}
+		}
+		// set dashboard temperature
+		if primarySensorIsDefined {
+			if sensorName == primarySensor {
+				a.systemInfo.DashboardTemp = sensor.Temperature
+			}
+		} else {
+			a.systemInfo.DashboardTemp = max(a.systemInfo.DashboardTemp, sensor.Temperature)
+		}
+		systemStats.Temperatures[sensorName] = twoDecimals(sensor.Temperature)
+	}
+	return nil
 }
 
 // Returns the size of the ZFS ARC memory cache in bytes

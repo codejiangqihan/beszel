@@ -8,7 +8,7 @@ msgstr ""
 "Language: vi\n"
 "Project-Id-Version: beszel\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-12-17 21:36\n"
+"PO-Revision-Date: 2025-02-20 02:40\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -18,60 +18,59 @@ msgstr ""
 "X-Crowdin-File: /main/beszel/site/src/locales/en/en.po\n"
 "X-Crowdin-File-ID: 16\n"
 
-#: src/components/routes/system.tsx:250
+#: src/components/routes/system.tsx:252
 msgid "{0, plural, one {# day} other {# days}}"
 msgstr "{0, plural, one {# ngày} other {# ngày}}"
 
-#: src/components/routes/system.tsx:248
+#: src/components/routes/system.tsx:250
 msgid "{hours, plural, one {# hour} other {# hours}}"
 msgstr "{hours, plural, one {# giờ} other {# giờ}}"
 
-#: src/lib/utils.ts:139
+#: src/lib/utils.ts:158
 msgid "1 hour"
 msgstr "1 giờ"
 
-#: src/lib/utils.ts:162
+#: src/lib/utils.ts:181
 msgid "1 week"
 msgstr "1 tuần"
 
-#: src/lib/utils.ts:147
+#: src/lib/utils.ts:166
 msgid "12 hours"
 msgstr "12 giờ"
 
-#: src/lib/utils.ts:155
+#: src/lib/utils.ts:174
 msgid "24 hours"
 msgstr "24 giờ"
 
-#: src/lib/utils.ts:170
+#: src/lib/utils.ts:189
 msgid "30 days"
 msgstr "30 ngày"
 
 #. Table column
-#: src/components/systems-table/systems-table.tsx:235
-#: src/components/systems-table/systems-table.tsx:321
-#: src/components/systems-table/systems-table.tsx:463
-#: src/components/systems-table/systems-table.tsx:473
+#: src/components/systems-table/systems-table.tsx:278
+#: src/components/systems-table/systems-table.tsx:366
+#: src/components/systems-table/systems-table.tsx:508
+#: src/components/systems-table/systems-table.tsx:518
 msgid "Actions"
 msgstr "Hành động"
 
-#: src/components/routes/home.tsx:61
+#: src/components/routes/home.tsx:62
 msgid "Active Alerts"
 msgstr "Cảnh báo hoạt động"
 
-#: src/components/add-system.tsx:78
+#: src/components/add-system.tsx:42
 msgid "Add <0>System</0>"
 msgstr "Thêm <0>Hệ thống</0>"
 
-#: src/components/add-system.tsx:87
+#: src/components/add-system.tsx:124
 msgid "Add New System"
 msgstr "Thêm Hệ thống Mới"
 
-#: src/components/add-system.tsx:165
-#: src/components/add-system.tsx:176
+#: src/components/add-system.tsx:230
 msgid "Add system"
 msgstr "Thêm hệ thống"
 
-#: src/components/routes/settings/notifications.tsx:156
+#: src/components/routes/settings/notifications.tsx:157
 msgid "Add URL"
 msgstr "Thêm URL"
 
@@ -79,15 +78,15 @@ msgstr "Thêm URL"
 msgid "Adjust display options for charts."
 msgstr "Điều chỉnh tùy chọn hiển thị cho biểu đồ."
 
-#: src/components/command-palette.tsx:132
-#: src/components/command-palette.tsx:145
-#: src/components/command-palette.tsx:159
-#: src/components/command-palette.tsx:173
-#: src/components/command-palette.tsx:188
+#: src/components/command-palette.tsx:133
+#: src/components/command-palette.tsx:146
+#: src/components/command-palette.tsx:160
+#: src/components/command-palette.tsx:174
+#: src/components/command-palette.tsx:189
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: src/components/systems-table/systems-table.tsx:204
+#: src/components/systems-table/systems-table.tsx:246
 msgid "Agent"
 msgstr "Tác nhân"
 
@@ -97,11 +96,11 @@ msgid "Alerts"
 msgstr "Cảnh báo"
 
 #: src/components/alerts/alert-button.tsx:88
-#: src/components/systems-table/systems-table.tsx:274
+#: src/components/systems-table/systems-table.tsx:319
 msgid "All Systems"
 msgstr "Tất cả Hệ thống"
 
-#: src/components/systems-table/systems-table.tsx:578
+#: src/components/systems-table/systems-table.tsx:642
 msgid "Are you sure you want to delete {name}?"
 msgstr "Bạn có chắc chắn muốn xóa {name} không?"
 
@@ -109,11 +108,11 @@ msgstr "Bạn có chắc chắn muốn xóa {name} không?"
 msgid "Automatic copy requires a secure context."
 msgstr "Sao chép tự động yêu cầu một ngữ cảnh an toàn."
 
-#: src/components/routes/system.tsx:625
+#: src/components/routes/system.tsx:626
 msgid "Average"
 msgstr "Trung bình"
 
-#: src/components/routes/system.tsx:396
+#: src/components/routes/system.tsx:403
 msgid "Average CPU utilization of containers"
 msgstr "Sử dụng CPU trung bình của các container"
 
@@ -121,37 +120,37 @@ msgstr "Sử dụng CPU trung bình của các container"
 msgid "Average exceeds <0>{value}{0}</0>"
 msgstr "Trung bình vượt quá <0>{value}{0}</0>"
 
-#: src/components/routes/system.tsx:497
+#: src/components/routes/system.tsx:504
 msgid "Average power consumption of GPUs"
 msgstr ""
 
-#: src/components/routes/system.tsx:385
+#: src/components/routes/system.tsx:392
 msgid "Average system-wide CPU utilization"
 msgstr "Sử dụng CPU trung bình toàn hệ thống"
 
-#: src/components/routes/system.tsx:515
+#: src/components/routes/system.tsx:522
 msgid "Average utilization of {0}"
 msgstr ""
 
-#: src/components/command-palette.tsx:170
-#: src/components/navbar.tsx:93
+#: src/components/command-palette.tsx:171
+#: src/components/navbar.tsx:94
 msgid "Backups"
 msgstr "Sao lưu"
 
-#: src/components/routes/system.tsx:441
-#: src/lib/utils.ts:307
+#: src/components/routes/system.tsx:448
+#: src/lib/utils.ts:326
 msgid "Bandwidth"
 msgstr "Băng thông"
 
-#: src/components/login/auth-form.tsx:289
+#: src/components/login/auth-form.tsx:304
 msgid "Beszel supports OpenID Connect and many OAuth2 authentication providers."
 msgstr "Beszel hỗ trợ OpenID Connect và nhiều nhà cung cấp xác thực OAuth2."
 
-#: src/components/routes/settings/notifications.tsx:127
+#: src/components/routes/settings/notifications.tsx:128
 msgid "Beszel uses <0>Shoutrrr</0> to integrate with popular notification services."
 msgstr "Beszel sử dụng <0>Shoutrrr</0> để tích hợp với các dịch vụ thông báo phổ biến."
 
-#: src/components/add-system.tsx:92
+#: src/components/add-system.tsx:129
 msgid "Binary"
 msgstr "Nhị phân"
 
@@ -159,7 +158,7 @@ msgstr "Nhị phân"
 msgid "Cache / Buffers"
 msgstr "Bộ nhớ đệm / Bộ đệm"
 
-#: src/components/systems-table/systems-table.tsx:589
+#: src/components/systems-table/systems-table.tsx:653
 msgid "Cancel"
 msgstr "Hủy bỏ"
 
@@ -183,11 +182,11 @@ msgstr "Kiểm tra {email} để lấy liên kết đặt lại."
 msgid "Check logs for more details."
 msgstr "Kiểm tra nhật ký để biết thêm chi tiết."
 
-#: src/components/routes/settings/notifications.tsx:183
+#: src/components/routes/settings/notifications.tsx:184
 msgid "Check your notification service"
 msgstr "Kiểm tra dịch vụ thông báo của bạn"
 
-#: src/components/add-system.tsx:151
+#: src/components/add-system.tsx:203
 msgid "Click to copy"
 msgstr "Nhấp để sao chép"
 
@@ -196,32 +195,33 @@ msgstr "Nhấp để sao chép"
 msgid "Command line instructions"
 msgstr "Hướng dẫn dòng lệnh"
 
-#: src/components/routes/settings/notifications.tsx:77
+#: src/components/routes/settings/notifications.tsx:78
 msgid "Configure how you receive alert notifications."
 msgstr "Cấu hình cách bạn nhận thông báo cảnh báo."
 
-#: src/components/login/auth-form.tsx:165
-#: src/components/login/auth-form.tsx:170
+#: src/components/login/auth-form.tsx:210
+#: src/components/login/auth-form.tsx:215
 msgid "Confirm password"
 msgstr "Xác nhận mật khẩu"
 
-#: src/components/systems-table/systems-table.tsx:595
+#: src/components/systems-table/systems-table.tsx:659
 msgid "Continue"
 msgstr "Tiếp tục"
 
-#: src/lib/utils.ts:25
+#: src/lib/utils.ts:26
 msgid "Copied to clipboard"
 msgstr "Đã sao chép vào clipboard"
 
-#: src/components/add-system.tsx:162
+#: src/components/add-system.tsx:214
+#: src/components/add-system.tsx:216
 msgid "Copy"
 msgstr "Sao chép"
 
-#: src/components/systems-table/systems-table.tsx:564
+#: src/components/systems-table/systems-table.tsx:624
 msgid "Copy host"
 msgstr "Sao chép máy chủ"
 
-#: src/components/add-system.tsx:173
+#: src/components/add-system.tsx:223
 msgid "Copy Linux command"
 msgstr "Sao chép lệnh Linux"
 
@@ -229,17 +229,17 @@ msgstr "Sao chép lệnh Linux"
 msgid "Copy text"
 msgstr "Sao chép văn bản"
 
-#: src/components/systems-table/systems-table.tsx:160
+#: src/components/systems-table/systems-table.tsx:165
 msgid "CPU"
 msgstr "CPU"
 
 #: src/components/charts/area-chart.tsx:56
-#: src/components/routes/system.tsx:384
-#: src/lib/utils.ts:289
+#: src/components/routes/system.tsx:391
+#: src/lib/utils.ts:308
 msgid "CPU Usage"
 msgstr "Sử dụng CPU"
 
-#: src/components/login/auth-form.tsx:191
+#: src/components/login/auth-form.tsx:236
 msgid "Create account"
 msgstr "Tạo tài khoản"
 
@@ -248,8 +248,8 @@ msgstr "Tạo tài khoản"
 msgid "Dark"
 msgstr "Tối"
 
-#: src/components/command-palette.tsx:81
-#: src/components/routes/home.tsx:34
+#: src/components/command-palette.tsx:82
+#: src/components/routes/home.tsx:35
 msgid "Dashboard"
 msgstr "Bảng điều khiển"
 
@@ -257,50 +257,55 @@ msgstr "Bảng điều khiển"
 msgid "Default time period"
 msgstr "Thời gian mặc định"
 
-#: src/components/systems-table/systems-table.tsx:570
+#: src/components/systems-table/systems-table.tsx:629
 msgid "Delete"
 msgstr "Xóa"
 
-#: src/components/systems-table/systems-table.tsx:176
+#: src/components/systems-table/systems-table.tsx:181
 msgid "Disk"
 msgstr "Đĩa"
 
-#: src/components/routes/system.tsx:431
+#: src/components/routes/system.tsx:438
 msgid "Disk I/O"
 msgstr "Đĩa I/O"
 
 #: src/components/charts/disk-chart.tsx:79
-#: src/components/routes/system.tsx:424
-#: src/lib/utils.ts:301
+#: src/components/routes/system.tsx:431
+#: src/lib/utils.ts:320
 msgid "Disk Usage"
 msgstr "Sử dụng Đĩa"
 
-#: src/components/routes/system.tsx:552
+#: src/components/routes/system.tsx:559
 msgid "Disk usage of {extraFsName}"
 msgstr "Sử dụng đĩa của {extraFsName}"
 
-#: src/components/routes/system.tsx:395
+#: src/components/routes/system.tsx:402
 msgid "Docker CPU Usage"
 msgstr "Sử dụng CPU Docker"
 
-#: src/components/routes/system.tsx:416
+#: src/components/routes/system.tsx:423
 msgid "Docker Memory Usage"
 msgstr "Sử dụng Bộ nhớ Docker"
 
-#: src/components/routes/system.tsx:457
+#: src/components/routes/system.tsx:464
 msgid "Docker Network I/O"
 msgstr "Mạng I/O Docker"
 
-#: src/components/command-palette.tsx:124
+#: src/components/command-palette.tsx:125
 msgid "Documentation"
 msgstr "Tài liệu"
 
-#: src/components/login/auth-form.tsx:128
+#: src/components/add-system.tsx:124
+#: src/components/systems-table/systems-table.tsx:599
+msgid "Edit"
+msgstr ""
+
+#: src/components/login/auth-form.tsx:173
 #: src/components/login/forgot-pass-form.tsx:53
 msgid "Email"
 msgstr "Email"
 
-#: src/components/routes/settings/notifications.tsx:91
+#: src/components/routes/settings/notifications.tsx:92
 msgid "Email notifications"
 msgstr "Thông báo email"
 
@@ -308,17 +313,17 @@ msgstr "Thông báo email"
 msgid "Enter email address to reset password"
 msgstr "Nhập địa chỉ email để đặt lại mật khẩu"
 
-#: src/components/routes/settings/notifications.tsx:111
+#: src/components/routes/settings/notifications.tsx:112
 msgid "Enter email address..."
 msgstr "Nhập địa chỉ email..."
 
-#: src/components/login/auth-form.tsx:232
+#: src/components/login/auth-form.tsx:136
 #: src/components/routes/settings/config-yaml.tsx:28
-#: src/components/routes/settings/notifications.tsx:187
+#: src/components/routes/settings/notifications.tsx:188
 msgid "Error"
 msgstr "Lỗi"
 
-#: src/components/routes/home.tsx:80
+#: src/components/routes/home.tsx:81
 msgid "Exceeds {0}{1} in last {2, plural, one {# minute} other {# minutes}}"
 msgstr "Vượt quá {0}{1} trong {2, plural, one {# phút} other {# phút}} qua"
 
@@ -334,16 +339,16 @@ msgstr "Xuất cấu hình"
 msgid "Export your current systems configuration."
 msgstr "Xuất cấu hình hệ thống hiện tại của bạn."
 
-#: src/lib/utils.ts:38
+#: src/lib/utils.ts:39
 msgid "Failed to authenticate"
 msgstr "Xác thực thất bại"
 
 #: src/components/routes/settings/layout.tsx:39
-#: src/components/routes/settings/notifications.tsx:62
+#: src/components/routes/settings/notifications.tsx:63
 msgid "Failed to save settings"
 msgstr "Lưu cài đặt thất bại"
 
-#: src/components/routes/settings/notifications.tsx:188
+#: src/components/routes/settings/notifications.tsx:189
 msgid "Failed to send test notification"
 msgstr "Gửi thông báo thử nghiệm thất bại"
 
@@ -351,8 +356,8 @@ msgstr "Gửi thông báo thử nghiệm thất bại"
 msgid "Failed to update alert"
 msgstr "Cập nhật cảnh báo thất bại"
 
-#: src/components/routes/system.tsx:596
-#: src/components/systems-table/systems-table.tsx:281
+#: src/components/routes/system.tsx:599
+#: src/components/systems-table/systems-table.tsx:326
 msgid "Filter..."
 msgstr "Lọc..."
 
@@ -360,7 +365,7 @@ msgstr "Lọc..."
 msgid "For <0>{min}</0> {min, plural, one {minute} other {minutes}}"
 msgstr "Trong <0>{min}</0> {min, plural, one {phút} other {phút}}"
 
-#: src/components/login/auth-form.tsx:313
+#: src/components/login/auth-form.tsx:328
 msgid "Forgot password?"
 msgstr "Quên mật khẩu?"
 
@@ -370,15 +375,15 @@ msgstr "Quên mật khẩu?"
 msgid "General"
 msgstr "Chung"
 
-#: src/components/routes/system.tsx:496
+#: src/components/routes/system.tsx:503
 msgid "GPU Power Draw"
 msgstr ""
 
-#: src/components/systems-table/systems-table.tsx:308
+#: src/components/systems-table/systems-table.tsx:353
 msgid "Grid"
 msgstr "Lưới"
 
-#: src/components/add-system.tsx:120
+#: src/components/add-system.tsx:157
 msgid "Host / IP"
 msgstr "Máy chủ / IP"
 
@@ -386,12 +391,12 @@ msgstr "Máy chủ / IP"
 msgid "If you've lost the password to your admin account, you may reset it using the following command."
 msgstr "Nếu bạn đã mất mật khẩu cho tài khoản quản trị viên của mình, bạn có thể đặt lại bằng cách sử dụng lệnh sau."
 
-#: src/components/login/auth-form.tsx:16
+#: src/components/login/auth-form.tsx:17
 msgid "Invalid email address."
 msgstr "Địa chỉ email không hợp lệ."
 
 #. Linux kernel
-#: src/components/routes/system.tsx:262
+#: src/components/routes/system.tsx:264
 msgid "Kernel"
 msgstr "Nhân"
 
@@ -399,7 +404,7 @@ msgstr "Nhân"
 msgid "Language"
 msgstr "Ngôn ngữ"
 
-#: src/components/systems-table/systems-table.tsx:294
+#: src/components/systems-table/systems-table.tsx:339
 msgid "Layout"
 msgstr "Bố cục"
 
@@ -408,7 +413,7 @@ msgstr "Bố cục"
 msgid "Light"
 msgstr "Sáng"
 
-#: src/components/navbar.tsx:104
+#: src/components/navbar.tsx:105
 msgid "Log Out"
 msgstr "Đăng xuất"
 
@@ -416,17 +421,17 @@ msgstr "Đăng xuất"
 msgid "Login"
 msgstr "Đăng nhập"
 
-#: src/components/login/auth-form.tsx:34
+#: src/components/login/auth-form.tsx:39
 #: src/components/login/forgot-pass-form.tsx:15
 msgid "Login attempt failed"
 msgstr "Nỗ lực đăng nhập thất bại"
 
-#: src/components/command-palette.tsx:156
-#: src/components/navbar.tsx:85
+#: src/components/command-palette.tsx:157
+#: src/components/navbar.tsx:86
 msgid "Logs"
 msgstr "Nhật ký"
 
-#: src/components/routes/settings/notifications.tsx:80
+#: src/components/routes/settings/notifications.tsx:81
 msgid "Looking instead for where to create alerts? Click the bell <0/> icons in the systems table."
 msgstr "Thay vào đó, bạn đang tìm nơi để tạo cảnh báo? Nhấp vào biểu tượng chuông <0/> trong bảng hệ thống."
 
@@ -434,56 +439,60 @@ msgstr "Thay vào đó, bạn đang tìm nơi để tạo cảnh báo? Nhấp v�
 msgid "Manage display and notification preferences."
 msgstr "Quản lý tùy chọn hiển thị và thông báo."
 
+#: src/components/add-system.tsx:225
+msgid "Manual setup instructions"
+msgstr ""
+
 #. Chart select field. Please try to keep this short.
-#: src/components/routes/system.tsx:628
+#: src/components/routes/system.tsx:629
 msgid "Max 1 min"
 msgstr "Tối đa 1 phút"
 
-#: src/components/systems-table/systems-table.tsx:168
+#: src/components/systems-table/systems-table.tsx:173
 msgid "Memory"
 msgstr "Bộ nhớ"
 
-#: src/components/routes/system.tsx:406
-#: src/lib/utils.ts:295
+#: src/components/routes/system.tsx:413
+#: src/lib/utils.ts:314
 msgid "Memory Usage"
 msgstr "Sử dụng Bộ nhớ"
 
-#: src/components/routes/system.tsx:417
+#: src/components/routes/system.tsx:424
 msgid "Memory usage of docker containers"
 msgstr "Sử dụng bộ nhớ của các container Docker"
 
-#: src/components/add-system.tsx:116
+#: src/components/add-system.tsx:153
 msgid "Name"
 msgstr "Tên"
 
-#: src/components/systems-table/systems-table.tsx:184
+#: src/components/systems-table/systems-table.tsx:198
 msgid "Net"
 msgstr "Mạng"
 
-#: src/components/routes/system.tsx:458
+#: src/components/routes/system.tsx:465
 msgid "Network traffic of docker containers"
 msgstr "Lưu lượng mạng của các container Docker"
 
-#: src/components/routes/system.tsx:443
+#: src/components/routes/system.tsx:450
 msgid "Network traffic of public interfaces"
 msgstr "Lưu lượng mạng của các giao diện công cộng"
 
-#: src/components/command-palette.tsx:49
+#: src/components/command-palette.tsx:50
 msgid "No results found."
 msgstr "Không tìm thấy kết quả."
 
-#: src/components/systems-table/systems-table.tsx:429
-#: src/components/systems-table/systems-table.tsx:502
+#: src/components/systems-table/systems-table.tsx:474
+#: src/components/systems-table/systems-table.tsx:547
 msgid "No systems found."
 msgstr "Không tìm thấy hệ thống."
 
-#: src/components/command-palette.tsx:110
+#: src/components/command-palette.tsx:111
 #: src/components/routes/settings/layout.tsx:56
-#: src/components/routes/settings/notifications.tsx:74
+#: src/components/routes/settings/notifications.tsx:75
 msgid "Notifications"
 msgstr "Thông báo"
 
-#: src/components/login/auth-form.tsx:284
+#: src/components/login/auth-form.tsx:299
 msgid "OAuth 2 / OIDC support"
 msgstr "Hỗ trợ OAuth 2 / OIDC"
 
@@ -491,11 +500,11 @@ msgstr "Hỗ trợ OAuth 2 / OIDC"
 msgid "On each restart, systems in the database will be updated to match the systems defined in the file."
 msgstr "Mỗi khi khởi động lại, các hệ thống trong cơ sở dữ liệu sẽ được cập nhật để khớp với các hệ thống được định nghĩa trong tệp."
 
-#: src/components/systems-table/systems-table.tsx:536
+#: src/components/systems-table/systems-table.tsx:585
 msgid "Open menu"
 msgstr "Mở menu"
 
-#: src/components/login/auth-form.tsx:203
+#: src/components/login/auth-form.tsx:248
 msgid "Or continue with"
 msgstr "Hoặc tiếp tục với"
 
@@ -503,32 +512,36 @@ msgstr "Hoặc tiếp tục với"
 msgid "Overwrite existing alerts"
 msgstr "Ghi đè các cảnh báo hiện có"
 
-#: src/components/command-palette.tsx:84
+#: src/components/command-palette.tsx:85
 msgid "Page"
 msgstr "Trang"
 
-#: src/components/command-palette.tsx:71
+#: src/components/command-palette.tsx:72
 msgid "Pages / Settings"
 msgstr "Trang / Cài đặt"
 
-#: src/components/login/auth-form.tsx:147
-#: src/components/login/auth-form.tsx:152
+#: src/components/login/auth-form.tsx:192
+#: src/components/login/auth-form.tsx:197
 msgid "Password"
 msgstr "Mật khẩu"
 
-#: src/components/login/auth-form.tsx:17
+#: src/components/login/auth-form.tsx:20
 msgid "Password must be at least 8 characters."
 msgstr "Mật khẩu phải có ít nhất 8 ký tự."
+
+#: src/components/login/auth-form.tsx:21
+msgid "Password must be less than 72 bytes."
+msgstr ""
 
 #: src/components/login/forgot-pass-form.tsx:33
 msgid "Password reset request received"
 msgstr "Yêu cầu đặt lại mật khẩu đã được nhận"
 
-#: src/components/systems-table/systems-table.tsx:558
+#: src/components/systems-table/systems-table.tsx:618
 msgid "Pause"
 msgstr "Tạm dừng"
 
-#: src/components/routes/settings/notifications.tsx:95
+#: src/components/routes/settings/notifications.tsx:96
 msgid "Please <0>configure an SMTP server</0> to ensure alerts are delivered."
 msgstr "Vui lòng <0>cấu hình máy chủ SMTP</0> để đảm bảo cảnh báo được gửi đi."
 
@@ -536,7 +549,7 @@ msgstr "Vui lòng <0>cấu hình máy chủ SMTP</0> để đảm bảo cảnh b
 msgid "Please check logs for more details."
 msgstr "Vui lòng kiểm tra nhật ký để biết thêm chi tiết."
 
-#: src/components/login/auth-form.tsx:35
+#: src/components/login/auth-form.tsx:40
 #: src/components/login/forgot-pass-form.tsx:16
 msgid "Please check your credentials and try again"
 msgstr "Vui lòng kiểm tra thông tin đăng nhập của bạn và thử lại"
@@ -545,15 +558,15 @@ msgstr "Vui lòng kiểm tra thông tin đăng nhập của bạn và thử lạ
 msgid "Please create an admin account"
 msgstr "Vui lòng tạo một tài khoản quản trị viên"
 
-#: src/components/login/auth-form.tsx:233
+#: src/components/login/auth-form.tsx:137
 msgid "Please enable pop-ups for this site"
 msgstr "Vui lòng bật cửa sổ bật lên cho trang web này"
 
-#: src/lib/utils.ts:39
+#: src/lib/utils.ts:40
 msgid "Please log in again"
 msgstr "Vui lòng đăng nhập lại"
 
-#: src/components/login/auth-form.tsx:292
+#: src/components/login/auth-form.tsx:307
 msgid "Please see <0>the documentation</0> for instructions."
 msgstr "Vui lòng xem <0>tài liệu</0> để biết hướng dẫn."
 
@@ -561,12 +574,12 @@ msgstr "Vui lòng xem <0>tài liệu</0> để biết hướng dẫn."
 msgid "Please sign in to your account"
 msgstr "Vui lòng đăng nhập vào tài khoản của bạn"
 
-#: src/components/add-system.tsx:124
+#: src/components/add-system.tsx:169
 msgid "Port"
 msgstr "Cổng"
 
-#: src/components/routes/system.tsx:407
-#: src/components/routes/system.tsx:523
+#: src/components/routes/system.tsx:414
+#: src/components/routes/system.tsx:530
 msgid "Precise utilization at the recorded time"
 msgstr "Sử dụng chính xác tại thời điểm ghi nhận"
 
@@ -575,7 +588,7 @@ msgid "Preferred Language"
 msgstr "Ngôn ngữ Ưa thích"
 
 #. Use 'Key' if your language requires many more characters
-#: src/components/add-system.tsx:128
+#: src/components/add-system.tsx:180
 msgid "Public Key"
 msgstr "Khóa"
 
@@ -594,24 +607,28 @@ msgstr "Đã nhận"
 msgid "Reset Password"
 msgstr "Đặt lại Mật khẩu"
 
-#: src/components/systems-table/systems-table.tsx:553
+#: src/components/systems-table/systems-table.tsx:613
 msgid "Resume"
 msgstr "Tiếp tục"
 
-#: src/components/routes/settings/notifications.tsx:117
+#: src/components/routes/settings/notifications.tsx:118
 msgid "Save address using enter key or comma. Leave blank to disable email notifications."
 msgstr "Lưu địa chỉ bằng cách sử dụng phím enter hoặc dấu phẩy. Để trống để vô hiệu hóa thông báo email."
 
 #: src/components/routes/settings/general.tsx:106
-#: src/components/routes/settings/notifications.tsx:167
+#: src/components/routes/settings/notifications.tsx:168
 msgid "Save Settings"
 msgstr "Lưu Cài đặt"
 
-#: src/components/navbar.tsx:133
+#: src/components/add-system.tsx:230
+msgid "Save system"
+msgstr ""
+
+#: src/components/navbar.tsx:134
 msgid "Search"
 msgstr "Tìm kiếm"
 
-#: src/components/command-palette.tsx:46
+#: src/components/command-palette.tsx:47
 msgid "Search for systems or settings..."
 msgstr "Tìm kiếm hệ thống hoặc cài đặt..."
 
@@ -628,9 +645,9 @@ msgstr "Đã gửi"
 msgid "Sets the default time range for charts when a system is viewed."
 msgstr "Đặt phạm vi thời gian mặc định cho biểu đồ khi một hệ thống được xem."
 
-#: src/components/command-palette.tsx:95
-#: src/components/command-palette.tsx:98
-#: src/components/command-palette.tsx:113
+#: src/components/command-palette.tsx:96
+#: src/components/command-palette.tsx:99
+#: src/components/command-palette.tsx:114
 #: src/components/routes/settings/layout.tsx:71
 #: src/components/routes/settings/layout.tsx:82
 msgid "Settings"
@@ -640,40 +657,40 @@ msgstr "Cài đặt"
 msgid "Settings saved"
 msgstr "Cài đặt đã được lưu"
 
-#: src/components/login/auth-form.tsx:191
+#: src/components/login/auth-form.tsx:236
 msgid "Sign in"
 msgstr "Đăng nhập"
 
-#: src/components/command-palette.tsx:185
+#: src/components/command-palette.tsx:186
 msgid "SMTP settings"
 msgstr "Cài đặt SMTP"
 
-#: src/components/systems-table/systems-table.tsx:316
+#: src/components/systems-table/systems-table.tsx:361
 msgid "Sort By"
 msgstr "Sắp xếp theo"
 
-#: src/lib/utils.ts:282
+#: src/lib/utils.ts:301
 msgid "Status"
 msgstr "Trạng thái"
 
-#: src/components/routes/system.tsx:473
+#: src/components/routes/system.tsx:480
 msgid "Swap space used by the system"
 msgstr "Không gian hoán đổi được sử dụng bởi hệ thống"
 
-#: src/components/routes/system.tsx:472
+#: src/components/routes/system.tsx:479
 msgid "Swap Usage"
 msgstr "Sử dụng Hoán đổi"
 
 #. System theme
 #: src/components/mode-toggle.tsx:26
-#: src/components/systems-table/systems-table.tsx:120
-#: src/components/systems-table/systems-table.tsx:128
-#: src/components/systems-table/systems-table.tsx:139
-#: src/components/systems-table/systems-table.tsx:473
+#: src/components/systems-table/systems-table.tsx:125
+#: src/components/systems-table/systems-table.tsx:133
+#: src/components/systems-table/systems-table.tsx:144
+#: src/components/systems-table/systems-table.tsx:518
 msgid "System"
 msgstr "Hệ thống"
 
-#: src/components/navbar.tsx:77
+#: src/components/navbar.tsx:78
 msgid "Systems"
 msgstr "Các hệ thống"
 
@@ -681,32 +698,37 @@ msgstr "Các hệ thống"
 msgid "Systems may be managed in a <0>config.yml</0> file inside your data directory."
 msgstr "Các hệ thống có thể được quản lý trong tệp <0>config.yml</0> bên trong thư mục dữ liệu của bạn."
 
-#: src/components/systems-table/systems-table.tsx:304
+#: src/components/systems-table/systems-table.tsx:349
 msgid "Table"
 msgstr "Bảng"
 
-#: src/components/routes/system.tsx:484
-#: src/lib/utils.ts:314
+#. Temperature label in systems table
+#: src/components/systems-table/systems-table.tsx:218
+msgid "Temp"
+msgstr ""
+
+#: src/components/routes/system.tsx:491
+#: src/lib/utils.ts:333
 msgid "Temperature"
 msgstr "Nhiệt độ"
 
-#: src/components/routes/system.tsx:485
+#: src/components/routes/system.tsx:492
 msgid "Temperatures of system sensors"
 msgstr "Nhiệt độ của các cảm biến hệ thống"
 
-#: src/components/routes/settings/notifications.tsx:211
+#: src/components/routes/settings/notifications.tsx:212
 msgid "Test <0>URL</0>"
 msgstr "Kiểm tra <0>URL</0>"
 
-#: src/components/routes/settings/notifications.tsx:182
+#: src/components/routes/settings/notifications.tsx:183
 msgid "Test notification sent"
 msgstr "Thông báo thử nghiệm đã được gửi"
 
-#: src/components/add-system.tsx:108
+#: src/components/add-system.tsx:145
 msgid "The agent must be running on the system to connect. Copy the installation command for the agent below."
 msgstr "Tác nhân phải đang chạy trên hệ thống để kết nối. Sao chép lệnh cài đặt cho tác nhân bên dưới."
 
-#: src/components/add-system.tsx:99
+#: src/components/add-system.tsx:136
 msgid "The agent must be running on the system to connect. Copy the<0>docker-compose.yml</0> for the agent below."
 msgstr "Tác nhân phải đang chạy trên hệ thống để kết nối. Sao chép <0>docker-compose.yml</0> cho tác nhân bên dưới."
 
@@ -714,24 +736,24 @@ msgstr "Tác nhân phải đang chạy trên hệ thống để kết nối. Sao
 msgid "Then log into the backend and reset your user account password in the users table."
 msgstr "Sau đó đăng nhập vào backend và đặt lại mật khẩu tài khoản người dùng của bạn trong bảng người dùng."
 
-#: src/components/systems-table/systems-table.tsx:581
+#: src/components/systems-table/systems-table.tsx:645
 msgid "This action cannot be undone. This will permanently delete all current records for {name} from the database."
 msgstr "Hành động này không thể hoàn tác. Điều này sẽ xóa vĩnh viễn tất cả các bản ghi hiện tại cho {name} khỏi cơ sở dữ liệu."
 
-#: src/components/routes/system.tsx:564
+#: src/components/routes/system.tsx:571
 msgid "Throughput of {extraFsName}"
 msgstr "Thông lượng của {extraFsName}"
 
-#: src/components/routes/system.tsx:432
+#: src/components/routes/system.tsx:439
 msgid "Throughput of root filesystem"
 msgstr "Thông lượng của hệ thống tệp gốc"
 
-#: src/components/routes/settings/notifications.tsx:106
+#: src/components/routes/settings/notifications.tsx:107
 msgid "To email(s)"
 msgstr "Đến email(s)"
 
-#: src/components/routes/system.tsx:359
-#: src/components/routes/system.tsx:372
+#: src/components/routes/system.tsx:366
+#: src/components/routes/system.tsx:379
 msgid "Toggle grid"
 msgstr "Chuyển đổi lưới"
 
@@ -739,45 +761,45 @@ msgstr "Chuyển đổi lưới"
 msgid "Toggle theme"
 msgstr "Chuyển đổi chủ đề"
 
-#: src/lib/utils.ts:317
+#: src/lib/utils.ts:336
 msgid "Triggers when any sensor exceeds a threshold"
 msgstr "Kích hoạt khi bất kỳ cảm biến nào vượt quá ngưỡng"
 
-#: src/lib/utils.ts:310
+#: src/lib/utils.ts:329
 msgid "Triggers when combined up/down exceeds a threshold"
 msgstr "Kích hoạt khi kết hợp lên/xuống vượt quá ngưỡng"
 
-#: src/lib/utils.ts:292
+#: src/lib/utils.ts:311
 msgid "Triggers when CPU usage exceeds a threshold"
 msgstr "Kích hoạt khi sử dụng CPU vượt quá ngưỡng"
 
-#: src/lib/utils.ts:298
+#: src/lib/utils.ts:317
 msgid "Triggers when memory usage exceeds a threshold"
 msgstr "Kích hoạt khi sử dụng bộ nhớ vượt quá ngưỡng"
 
-#: src/lib/utils.ts:285
+#: src/lib/utils.ts:304
 msgid "Triggers when status switches between up and down"
 msgstr "Kích hoạt khi trạng thái chuyển đổi giữa lên và xuống"
 
-#: src/lib/utils.ts:304
+#: src/lib/utils.ts:323
 msgid "Triggers when usage of any disk exceeds a threshold"
 msgstr "Kích hoạt khi sử dụng bất kỳ đĩa nào vượt quá ngưỡng"
 
-#: src/components/systems-table/systems-table.tsx:277
+#: src/components/systems-table/systems-table.tsx:322
 msgid "Updated in real time. Click on a system to view information."
 msgstr "Cập nhật theo thời gian thực. Nhấp vào một hệ thống để xem thông tin."
 
-#: src/components/routes/system.tsx:261
+#: src/components/routes/system.tsx:263
 msgid "Uptime"
 msgstr "Thời gian hoạt động"
 
 #: src/components/charts/area-chart.tsx:73
-#: src/components/routes/system.tsx:514
-#: src/components/routes/system.tsx:551
+#: src/components/routes/system.tsx:521
+#: src/components/routes/system.tsx:558
 msgid "Usage"
 msgstr "Sử dụng"
 
-#: src/components/routes/system.tsx:424
+#: src/components/routes/system.tsx:431
 msgid "Usage of root partition"
 msgstr "Sử dụng phân vùng gốc"
 
@@ -787,20 +809,20 @@ msgstr "Sử dụng phân vùng gốc"
 msgid "Used"
 msgstr "Đã sử dụng"
 
-#: src/components/command-palette.tsx:142
-#: src/components/navbar.tsx:69
+#: src/components/command-palette.tsx:143
+#: src/components/navbar.tsx:70
 msgid "Users"
 msgstr "Người dùng"
 
-#: src/components/systems-table/systems-table.tsx:286
+#: src/components/systems-table/systems-table.tsx:331
 msgid "View"
 msgstr "Xem"
 
-#: src/components/systems-table/systems-table.tsx:350
+#: src/components/systems-table/systems-table.tsx:395
 msgid "Visible Fields"
 msgstr "Các cột hiển thị"
 
-#: src/components/routes/system.tsx:662
+#: src/components/routes/system.tsx:663
 msgid "Waiting for enough records to display"
 msgstr "Đang chờ đủ bản ghi để hiển thị"
 
@@ -808,7 +830,7 @@ msgstr "Đang chờ đủ bản ghi để hiển thị"
 msgid "Want to help us make our translations even better? Check out <0>Crowdin</0> for more details."
 msgstr "Muốn giúp chúng tôi cải thiện bản dịch của mình? Xem <0>Crowdin</0> để biết thêm chi tiết."
 
-#: src/components/routes/settings/notifications.tsx:124
+#: src/components/routes/settings/notifications.tsx:125
 msgid "Webhook / Push notifications"
 msgstr "Thông báo Webhook / Push"
 

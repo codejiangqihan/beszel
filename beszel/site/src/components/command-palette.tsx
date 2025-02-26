@@ -22,9 +22,10 @@ import {
 import { useEffect } from "react"
 import { useStore } from "@nanostores/react"
 import { $systems } from "@/lib/stores"
-import { isAdmin } from "@/lib/utils"
-import { navigate } from "./router"
+import { getHostDisplayValue, isAdmin } from "@/lib/utils"
+import { $router, basePath, navigate } from "./router"
 import { Trans, t } from "@lingui/macro"
+import { getPagePath } from "@nanostores/router"
 
 export default function CommandPalette({ open, setOpen }: { open: boolean; setOpen: (open: boolean) => void }) {
 	const systems = useStore($systems)
@@ -55,13 +56,13 @@ export default function CommandPalette({ open, setOpen }: { open: boolean; setOp
 								<CommandItem
 									key={system.id}
 									onSelect={() => {
-										navigate(`/system/${encodeURIComponent(system.name)}`)
+										navigate(getPagePath($router, "system", { name: system.name }))
 										setOpen(false)
 									}}
 								>
 									<Server className="me-2 h-4 w-4" />
 									<span>{system.name}</span>
-									<CommandShortcut>{system.host}</CommandShortcut>
+									<CommandShortcut>{getHostDisplayValue(system)}</CommandShortcut>
 								</CommandItem>
 							))}
 						</CommandGroup>
@@ -72,7 +73,7 @@ export default function CommandPalette({ open, setOpen }: { open: boolean; setOp
 					<CommandItem
 						keywords={["home"]}
 						onSelect={() => {
-							navigate("/")
+							navigate(basePath)
 							setOpen(false)
 						}}
 					>
@@ -86,7 +87,7 @@ export default function CommandPalette({ open, setOpen }: { open: boolean; setOp
 					</CommandItem>
 					<CommandItem
 						onSelect={() => {
-							navigate("/settings/general")
+							navigate(getPagePath($router, "settings", { name: "general" }))
 							setOpen(false)
 						}}
 					>
@@ -101,7 +102,7 @@ export default function CommandPalette({ open, setOpen }: { open: boolean; setOp
 					<CommandItem
 						keywords={["alerts"]}
 						onSelect={() => {
-							navigate("/settings/notifications")
+							navigate(getPagePath($router, "settings", { name: "notifications" }))
 							setOpen(false)
 						}}
 					>

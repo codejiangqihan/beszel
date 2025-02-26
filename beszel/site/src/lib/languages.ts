@@ -50,6 +50,11 @@ export default [
 		e: "🇭🇷",
 	},
 	{
+		lang: "hu",
+		label: "Magyar",
+		e: "🇭🇺",
+	},
+	{
 		lang: "it",
 		label: "Italiano",
 		e: "🇮🇹",
@@ -68,6 +73,11 @@ export default [
 		lang: "nl",
 		label: "Nederlands",
 		e: "🇳🇱",
+	},
+	{
+		lang: "no",
+		label: "Norsk",
+		e: "🇳🇴",
 	},
 	{
 		lang: "pl",

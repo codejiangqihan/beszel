@@ -7,14 +7,19 @@ import { $authenticated, pb } from "@/lib/stores"
 import * as v from "valibot"
 import { toast } from "../ui/use-toast"
 import { Dialog, DialogContent, DialogTrigger, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { useCallback, useState } from "react"
-import { AuthMethodsList, OAuth2AuthConfig } from "pocketbase"
-import { Link } from "../router"
+import { useCallback, useEffect, useState } from "react"
+import { AuthMethodsList, AuthProviderInfo, OAuth2AuthConfig } from "pocketbase"
+import { $router, Link, prependBasePath } from "../router"
 import { Trans, t } from "@lingui/macro"
+import { getPagePath } from "@nanostores/router"
 
 const honeypot = v.literal("")
 const emailSchema = v.pipe(v.string(), v.email(t`Invalid email address.`))
-const passwordSchema = v.pipe(v.string(), v.minLength(8, t`Password must be at least 8 characters.`))
+const passwordSchema = v.pipe(
+	v.string(),
+	v.minLength(8, t`Password must be at least 8 characters.`),
+	v.maxBytes(72, t`Password must be less than 72 bytes.`)
+)
 
 const LoginSchema = v.looseObject({
 	name: honeypot,
@@ -113,8 +118,48 @@ export function UserAuthForm({
 		return null
 	}
 
-	const oauthEnabled = authMethods.oauth2.enabled && authMethods.oauth2.providers.length > 0
+	const authProviders = authMethods.oauth2.providers ?? []
+	const oauthEnabled = authMethods.oauth2.enabled && authProviders.length > 0
 	const passwordEnabled = authMethods.password.enabled
+
+	function loginWithOauth(provider: AuthProviderInfo, forcePopup = false) {
+		setIsOauthLoading(true)
+		const oAuthOpts: OAuth2AuthConfig = {
+			provider: provider.name,
+		}
+		// https://github.com/pocketbase/pocketbase/discussions/2429#discussioncomment-5943061
+		if (forcePopup || navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+			const authWindow = window.open()
+			if (!authWindow) {
+				setIsOauthLoading(false)
+				toast({
+					title: t`Error`,
+					description: t`Please enable pop-ups for this site`,
+					variant: "destructive",
+				})
+				return
+			}
+			oAuthOpts.urlCallback = (url) => {
+				authWindow.location.href = url
+			}
+		}
+		pb.collection("users")
+			.authWithOAuth2(oAuthOpts)
+			.then(() => {
+				$authenticated.set(pb.authStore.isValid)
+			})
+			.catch(showLoginFaliedToast)
+			.finally(() => {
+				setIsOauthLoading(false)
+			})
+	}
+
+	useEffect(() => {
+		// auto login if password disabled and only one auth provider
+		if (!passwordEnabled && authProviders.length === 1) {
+			loginWithOauth(authProviders[0], true)
+		}
+	}, [])
 
 	return (
 		<div className={cn("grid gap-6", className)} {...props}>
@@ -132,12 +177,12 @@ export function UserAuthForm({
 									name="email"
 									required
 									placeholder="name@example.com"
-									type="email"
+									type="text"
 									autoCapitalize="none"
 									autoComplete="email"
 									autoCorrect="off"
 									disabled={isLoading || isOauthLoading}
-									className="ps-9"
+									className={cn("ps-9", errors?.email && "border-red-500")}
 								/>
 								{errors?.email && <p className="px-1 text-xs text-red-600">{errors.email}</p>}
 							</div>
@@ -154,7 +199,7 @@ export function UserAuthForm({
 									type="password"
 									autoComplete="current-password"
 									disabled={isLoading || isOauthLoading}
-									className="ps-9"
+									className={cn("ps-9", errors?.password && "border-red-500")}
 								/>
 								{errors?.password && <p className="px-1 text-xs text-red-600">{errors.password}</p>}
 							</div>
@@ -172,7 +217,7 @@ export function UserAuthForm({
 										type="password"
 										autoComplete="current-password"
 										disabled={isLoading || isOauthLoading}
-										className="ps-9"
+										className={cn("ps-9", errors?.password && "border-red-500")}
 									/>
 									{errors?.passwordConfirm && <p className="px-1 text-xs text-red-600">{errors.passwordConfirm}</p>}
 								</div>
@@ -218,37 +263,7 @@ export function UserAuthForm({
 								"justify-self-center": !passwordEnabled,
 								"px-5": !passwordEnabled,
 							})}
-							onClick={() => {
-								setIsOauthLoading(true)
-								const oAuthOpts: OAuth2AuthConfig = {
-									provider: provider.name,
-								}
-								// https://github.com/pocketbase/pocketbase/discussions/2429#discussioncomment-5943061
-								if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-									const authWindow = window.open()
-									if (!authWindow) {
-										setIsOauthLoading(false)
-										toast({
-											title: t`Error`,
-											description: t`Please enable pop-ups for this site`,
-											variant: "destructive",
-										})
-										return
-									}
-									oAuthOpts.urlCallback = (url) => {
-										authWindow.location.href = url
-									}
-								}
-								pb.collection("users")
-									.authWithOAuth2(oAuthOpts)
-									.then(() => {
-										$authenticated.set(pb.authStore.isValid)
-									})
-									.catch(showLoginFaliedToast)
-									.finally(() => {
-										setIsOauthLoading(false)
-									})
-							}}
+							onClick={() => loginWithOauth(provider)}
 							disabled={isLoading || isOauthLoading}
 						>
 							{isOauthLoading ? (
@@ -256,11 +271,11 @@ export function UserAuthForm({
 							) : (
 								<img
 									className="me-2 h-4 w-4 dark:brightness-0 dark:invert"
-									src={`/_/images/oauth2/${provider.name}.svg`}
+									src={prependBasePath(`/_/images/oauth2/${provider.name}.svg`)}
 									alt=""
-									onError={(e) => {
-										e.currentTarget.src = "/static/lock.svg"
-									}}
+									// onError={(e) => {
+									// 	e.currentTarget.src = "/static/lock.svg"
+									// }}
 								/>
 							)}
 							<span className="translate-y-[1px]">{provider.displayName}</span>
@@ -274,7 +289,7 @@ export function UserAuthForm({
 				<Dialog>
 					<DialogTrigger asChild>
 						<button type="button" className={cn(buttonVariants({ variant: "outline" }))}>
-							<img className="me-2 h-4 w-4 dark:invert" src="/_/images/oauth2/github.svg" alt="" />
+							<img className="me-2 h-4 w-4 dark:invert" src={prependBasePath("/_/images/oauth2/github.svg")} alt="" />
 							<span className="translate-y-[1px]">GitHub</span>
 						</button>
 					</DialogTrigger>
@@ -307,7 +322,7 @@ export function UserAuthForm({
 
 			{passwordEnabled && !isFirstRun && (
 				<Link
-					href="/forgot-password"
+					href={getPagePath($router, "forgot_password")}
 					className="text-sm mx-auto hover:text-brand underline underline-offset-4 opacity-70 hover:opacity-100 transition-opacity"
 				>
 					<Trans>Forgot password?</Trans>

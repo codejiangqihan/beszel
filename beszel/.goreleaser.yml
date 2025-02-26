@@ -10,8 +10,8 @@ builds:
   - id: beszel
     binary: beszel
     main: cmd/hub/hub.go
-    # env:
-    #   - CGO_ENABLED=0
+    env:
+      - CGO_ENABLED=0
     goos:
       - linux
       - darwin
@@ -23,20 +23,28 @@ builds:
   - id: beszel-agent
     binary: beszel-agent
     main: cmd/agent/agent.go
-    # env:
-    #   - CGO_ENABLED=0
+    env:
+      - CGO_ENABLED=0
     goos:
       - linux
       - darwin
       - freebsd
+      - windows
     goarch:
       - amd64
       - arm64
       - arm
       - mips64
+      - riscv64
     ignore:
       - goos: freebsd
         goarch: arm
+      - goos: windows
+        goarch: arm
+      - goos: darwin
+        goarch: riscv64
+      - goos: windows
+        goarch: riscv64
 
 archives:
   - id: beszel
@@ -47,6 +55,10 @@ archives:
       {{ .Binary }}_
       {{- .Os }}_
       {{- .Arch }}
+    format_overrides:
+      - goos: windows
+        format: zip
+
   - id: beszel-agent
     format: tar.gz
     builds:
@@ -55,10 +67,49 @@ archives:
       {{ .Binary }}_
       {{- .Os }}_
       {{- .Arch }}
-    # use zip for windows archives
-    # format_overrides:
-    #   - goos: windows
-    #     format: zip
+
+nfpms:
+  - id: beszel-agent
+    package_name: beszel-agent
+    description: |-
+      Agent for Beszel
+      Beszel is a lightweight server monitoring platform that includes Docker
+      statistics, historical data, and alert functions. It has a friendly web
+      interface, simple configuration, and is ready to use out of the box.
+      It supports automatic backup, multi-user, OAuth authentication, and
+      API access.
+    maintainer: henrygd <hank@henrygd.me>
+    section: net
+    builds:
+      - beszel-agent
+    formats:
+      - deb
+    # don't think this is needed with CGO_ENABLED=0
+    # dependencies:
+    #   - libc6
+    contents:
+      - src: ../supplemental/debian/beszel-agent.service
+        dst: lib/systemd/system/beszel-agent.service
+        packager: deb
+      - src: ../supplemental/debian/copyright
+        dst: usr/share/doc/beszel-agent/copyright
+        packager: deb
+      - src: ../supplemental/debian/lintian-overrides
+        dst: usr/share/lintian/overrides/beszel-agent
+        packager: deb
+    scripts:
+      postinstall: ../supplemental/debian/postinstall.sh
+      preremove: ../supplemental/debian/prerm.sh
+      postremove: ../supplemental/debian/postrm.sh
+    deb:
+      predepends:
+        - adduser
+        - debconf
+      scripts:
+        templates: ../supplemental/debian/templates
+        # Currently broken due to a bug in goreleaser
+        # https://github.com/goreleaser/goreleaser/issues/5487
+        #config: ../supplemental/debian/config.sh
 
 release:
   draft: true

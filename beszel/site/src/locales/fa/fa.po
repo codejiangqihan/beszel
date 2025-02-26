@@ -8,7 +8,7 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: beszel\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-12-17 21:36\n"
+"PO-Revision-Date: 2025-02-20 02:40\n"
 "Last-Translator: \n"
 "Language-Team: Persian\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,60 +18,59 @@ msgstr ""
 "X-Crowdin-File: /main/beszel/site/src/locales/en/en.po\n"
 "X-Crowdin-File-ID: 16\n"
 
-#: src/components/routes/system.tsx:250
+#: src/components/routes/system.tsx:252
 msgid "{0, plural, one {# day} other {# days}}"
 msgstr "{0, plural, one {# روز} other {# روز}}"
 
-#: src/components/routes/system.tsx:248
+#: src/components/routes/system.tsx:250
 msgid "{hours, plural, one {# hour} other {# hours}}"
 msgstr "{hours, plural, one {# ساعت} other {# ساعت}}"
 
-#: src/lib/utils.ts:139
+#: src/lib/utils.ts:158
 msgid "1 hour"
 msgstr "۱ ساعت"
 
-#: src/lib/utils.ts:162
+#: src/lib/utils.ts:181
 msgid "1 week"
 msgstr "۱ هفته"
 
-#: src/lib/utils.ts:147
+#: src/lib/utils.ts:166
 msgid "12 hours"
 msgstr "۱۲ ساعت"
 
-#: src/lib/utils.ts:155
+#: src/lib/utils.ts:174
 msgid "24 hours"
 msgstr "۲۴ ساعت"
 
-#: src/lib/utils.ts:170
+#: src/lib/utils.ts:189
 msgid "30 days"
 msgstr "۳۰ روز"
 
 #. Table column
-#: src/components/systems-table/systems-table.tsx:235
-#: src/components/systems-table/systems-table.tsx:321
-#: src/components/systems-table/systems-table.tsx:463
-#: src/components/systems-table/systems-table.tsx:473
+#: src/components/systems-table/systems-table.tsx:278
+#: src/components/systems-table/systems-table.tsx:366
+#: src/components/systems-table/systems-table.tsx:508
+#: src/components/systems-table/systems-table.tsx:518
 msgid "Actions"
 msgstr "عملیات"
 
-#: src/components/routes/home.tsx:61
+#: src/components/routes/home.tsx:62
 msgid "Active Alerts"
 msgstr " هشدارهای فعال"
 
-#: src/components/add-system.tsx:78
+#: src/components/add-system.tsx:42
 msgid "Add <0>System</0>"
 msgstr "افزودن <0>سیستم</0>"
 
-#: src/components/add-system.tsx:87
+#: src/components/add-system.tsx:124
 msgid "Add New System"
 msgstr "افزودن سیستم جدید"
 
-#: src/components/add-system.tsx:165
-#: src/components/add-system.tsx:176
+#: src/components/add-system.tsx:230
 msgid "Add system"
 msgstr "افزودن سیستم"
 
-#: src/components/routes/settings/notifications.tsx:156
+#: src/components/routes/settings/notifications.tsx:157
 msgid "Add URL"
 msgstr "افزودن آدرس اینترنتی"
 
@@ -79,15 +78,15 @@ msgstr "افزودن آدرس اینترنتی"
 msgid "Adjust display options for charts."
 msgstr "تنظیم گزینه‌های نمایش برای نمودارها."
 
-#: src/components/command-palette.tsx:132
-#: src/components/command-palette.tsx:145
-#: src/components/command-palette.tsx:159
-#: src/components/command-palette.tsx:173
-#: src/components/command-palette.tsx:188
+#: src/components/command-palette.tsx:133
+#: src/components/command-palette.tsx:146
+#: src/components/command-palette.tsx:160
+#: src/components/command-palette.tsx:174
+#: src/components/command-palette.tsx:189
 msgid "Admin"
 msgstr "مدیر"
 
-#: src/components/systems-table/systems-table.tsx:204
+#: src/components/systems-table/systems-table.tsx:246
 msgid "Agent"
 msgstr "عامل"
 
@@ -97,11 +96,11 @@ msgid "Alerts"
 msgstr "هشدارها"
 
 #: src/components/alerts/alert-button.tsx:88
-#: src/components/systems-table/systems-table.tsx:274
+#: src/components/systems-table/systems-table.tsx:319
 msgid "All Systems"
 msgstr "همه سیستم‌ها"
 
-#: src/components/systems-table/systems-table.tsx:578
+#: src/components/systems-table/systems-table.tsx:642
 msgid "Are you sure you want to delete {name}?"
 msgstr "آیا مطمئن هستید که می‌خواهید {name} را حذف کنید؟"
 
@@ -109,11 +108,11 @@ msgstr "آیا مطمئن هستید که می‌خواهید {name} را حذف
 msgid "Automatic copy requires a secure context."
 msgstr "کپی خودکار نیاز به یک زمینه امن دارد."
 
-#: src/components/routes/system.tsx:625
+#: src/components/routes/system.tsx:626
 msgid "Average"
 msgstr "میانگین"
 
-#: src/components/routes/system.tsx:396
+#: src/components/routes/system.tsx:403
 msgid "Average CPU utilization of containers"
 msgstr "میانگین استفاده از CPU کانتینرها"
 
@@ -121,37 +120,37 @@ msgstr "میانگین استفاده از CPU کانتینرها"
 msgid "Average exceeds <0>{value}{0}</0>"
 msgstr ""
 
-#: src/components/routes/system.tsx:497
+#: src/components/routes/system.tsx:504
 msgid "Average power consumption of GPUs"
 msgstr "میانگین مصرف برق پردازنده‌های گرافیکی"
 
-#: src/components/routes/system.tsx:385
+#: src/components/routes/system.tsx:392
 msgid "Average system-wide CPU utilization"
 msgstr "میانگین استفاده از CPU در کل سیستم"
 
-#: src/components/routes/system.tsx:515
+#: src/components/routes/system.tsx:522
 msgid "Average utilization of {0}"
 msgstr "میانگین استفاده از {0}"
 
-#: src/components/command-palette.tsx:170
-#: src/components/navbar.tsx:93
+#: src/components/command-palette.tsx:171
+#: src/components/navbar.tsx:94
 msgid "Backups"
 msgstr "پشتیبان‌گیری‌ها"
 
-#: src/components/routes/system.tsx:441
-#: src/lib/utils.ts:307
+#: src/components/routes/system.tsx:448
+#: src/lib/utils.ts:326
 msgid "Bandwidth"
 msgstr "پهنای باند"
 
-#: src/components/login/auth-form.tsx:289
+#: src/components/login/auth-form.tsx:304
 msgid "Beszel supports OpenID Connect and many OAuth2 authentication providers."
 msgstr "بِزل از OpenID Connect و بسیاری از ارائه‌دهندگان احراز هویت OAuth2 پشتیبانی می‌کند."
 
-#: src/components/routes/settings/notifications.tsx:127
+#: src/components/routes/settings/notifications.tsx:128
 msgid "Beszel uses <0>Shoutrrr</0> to integrate with popular notification services."
 msgstr "بِزل از <0>Shoutrrr</0> برای ادغام با سرویس‌های اطلاع‌رسانی محبوب استفاده می‌کند."
 
-#: src/components/add-system.tsx:92
+#: src/components/add-system.tsx:129
 msgid "Binary"
 msgstr "دودویی"
 
@@ -159,7 +158,7 @@ msgstr "دودویی"
 msgid "Cache / Buffers"
 msgstr "حافظه پنهان / بافرها"
 
-#: src/components/systems-table/systems-table.tsx:589
+#: src/components/systems-table/systems-table.tsx:653
 msgid "Cancel"
 msgstr "لغو"
 
@@ -183,11 +182,11 @@ msgstr "ایمیل {email} خود را برای لینک بازنشانی برر
 msgid "Check logs for more details."
 msgstr "برای جزئیات بیشتر، لاگ‌ها را بررسی کنید."
 
-#: src/components/routes/settings/notifications.tsx:183
+#: src/components/routes/settings/notifications.tsx:184
 msgid "Check your notification service"
 msgstr "سرویس اطلاع‌رسانی خود را بررسی کنید"
 
-#: src/components/add-system.tsx:151
+#: src/components/add-system.tsx:203
 msgid "Click to copy"
 msgstr "برای کپی کردن کلیک کنید"
 
@@ -196,32 +195,33 @@ msgstr "برای کپی کردن کلیک کنید"
 msgid "Command line instructions"
 msgstr "دستورالعمل‌های خط فرمان"
 
-#: src/components/routes/settings/notifications.tsx:77
+#: src/components/routes/settings/notifications.tsx:78
 msgid "Configure how you receive alert notifications."
 msgstr "نحوه دریافت هشدارهای اطلاع‌رسانی را پیکربندی کنید."
 
-#: src/components/login/auth-form.tsx:165
-#: src/components/login/auth-form.tsx:170
+#: src/components/login/auth-form.tsx:210
+#: src/components/login/auth-form.tsx:215
 msgid "Confirm password"
 msgstr "تأیید رمز عبور"
 
-#: src/components/systems-table/systems-table.tsx:595
+#: src/components/systems-table/systems-table.tsx:659
 msgid "Continue"
 msgstr "ادامه"
 
-#: src/lib/utils.ts:25
+#: src/lib/utils.ts:26
 msgid "Copied to clipboard"
 msgstr "در کلیپ‌بورد کپی شد"
 
-#: src/components/add-system.tsx:162
+#: src/components/add-system.tsx:214
+#: src/components/add-system.tsx:216
 msgid "Copy"
 msgstr "کپی"
 
-#: src/components/systems-table/systems-table.tsx:564
+#: src/components/systems-table/systems-table.tsx:624
 msgid "Copy host"
 msgstr "کپی میزبان"
 
-#: src/components/add-system.tsx:173
+#: src/components/add-system.tsx:223
 msgid "Copy Linux command"
 msgstr "کپی دستور لینوکس"
 
@@ -229,17 +229,17 @@ msgstr "کپی دستور لینوکس"
 msgid "Copy text"
 msgstr "کپی متن"
 
-#: src/components/systems-table/systems-table.tsx:160
+#: src/components/systems-table/systems-table.tsx:165
 msgid "CPU"
 msgstr "پردازنده"
 
 #: src/components/charts/area-chart.tsx:56
-#: src/components/routes/system.tsx:384
-#: src/lib/utils.ts:289
+#: src/components/routes/system.tsx:391
+#: src/lib/utils.ts:308
 msgid "CPU Usage"
 msgstr "میزان استفاده از پردازنده"
 
-#: src/components/login/auth-form.tsx:191
+#: src/components/login/auth-form.tsx:236
 msgid "Create account"
 msgstr "ایجاد حساب کاربری"
 
@@ -248,8 +248,8 @@ msgstr "ایجاد حساب کاربری"
 msgid "Dark"
 msgstr "تیره"
 
-#: src/components/command-palette.tsx:81
-#: src/components/routes/home.tsx:34
+#: src/components/command-palette.tsx:82
+#: src/components/routes/home.tsx:35
 msgid "Dashboard"
 msgstr "داشبورد"
 
@@ -257,50 +257,55 @@ msgstr "داشبورد"
 msgid "Default time period"
 msgstr "بازه زمانی پیش‌فرض"
 
-#: src/components/systems-table/systems-table.tsx:570
+#: src/components/systems-table/systems-table.tsx:629
 msgid "Delete"
 msgstr "حذف"
 
-#: src/components/systems-table/systems-table.tsx:176
+#: src/components/systems-table/systems-table.tsx:181
 msgid "Disk"
 msgstr "دیسک"
 
-#: src/components/routes/system.tsx:431
+#: src/components/routes/system.tsx:438
 msgid "Disk I/O"
 msgstr "ورودی/خروجی دیسک"
 
 #: src/components/charts/disk-chart.tsx:79
-#: src/components/routes/system.tsx:424
-#: src/lib/utils.ts:301
+#: src/components/routes/system.tsx:431
+#: src/lib/utils.ts:320
 msgid "Disk Usage"
 msgstr "میزان استفاده از دیسک"
 
-#: src/components/routes/system.tsx:552
+#: src/components/routes/system.tsx:559
 msgid "Disk usage of {extraFsName}"
 msgstr "میزان استفاده از دیسک {extraFsName}"
 
-#: src/components/routes/system.tsx:395
+#: src/components/routes/system.tsx:402
 msgid "Docker CPU Usage"
 msgstr "میزان استفاده از CPU داکر"
 
-#: src/components/routes/system.tsx:416
+#: src/components/routes/system.tsx:423
 msgid "Docker Memory Usage"
 msgstr "میزان استفاده از حافظه داکر"
 
-#: src/components/routes/system.tsx:457
+#: src/components/routes/system.tsx:464
 msgid "Docker Network I/O"
 msgstr "ورودی/خروجی شبکه داکر"
 
-#: src/components/command-palette.tsx:124
+#: src/components/command-palette.tsx:125
 msgid "Documentation"
 msgstr "مستندات"
 
-#: src/components/login/auth-form.tsx:128
+#: src/components/add-system.tsx:124
+#: src/components/systems-table/systems-table.tsx:599
+msgid "Edit"
+msgstr ""
+
+#: src/components/login/auth-form.tsx:173
 #: src/components/login/forgot-pass-form.tsx:53
 msgid "Email"
 msgstr "ایمیل"
 
-#: src/components/routes/settings/notifications.tsx:91
+#: src/components/routes/settings/notifications.tsx:92
 msgid "Email notifications"
 msgstr "اعلان‌های ایمیلی"
 
@@ -308,17 +313,17 @@ msgstr "اعلان‌های ایمیلی"
 msgid "Enter email address to reset password"
 msgstr "آدرس ایمیل را برای بازنشانی رمز عبور وارد کنید"
 
-#: src/components/routes/settings/notifications.tsx:111
+#: src/components/routes/settings/notifications.tsx:112
 msgid "Enter email address..."
 msgstr "آدرس ایمیل را وارد کنید..."
 
-#: src/components/login/auth-form.tsx:232
+#: src/components/login/auth-form.tsx:136
 #: src/components/routes/settings/config-yaml.tsx:28
-#: src/components/routes/settings/notifications.tsx:187
+#: src/components/routes/settings/notifications.tsx:188
 msgid "Error"
 msgstr "خطا"
 
-#: src/components/routes/home.tsx:80
+#: src/components/routes/home.tsx:81
 msgid "Exceeds {0}{1} in last {2, plural, one {# minute} other {# minutes}}"
 msgstr "در {2, plural, one {# دقیقه} other {# دقیقه}} گذشته از {0}{1} بیشتر است"
 
@@ -334,16 +339,16 @@ msgstr "خارج کردن پیکربندی"
 msgid "Export your current systems configuration."
 msgstr "پیکربندی سیستم‌های فعلی خود را خارج کنید."
 
-#: src/lib/utils.ts:38
+#: src/lib/utils.ts:39
 msgid "Failed to authenticate"
 msgstr "احراز هویت ناموفق بود"
 
 #: src/components/routes/settings/layout.tsx:39
-#: src/components/routes/settings/notifications.tsx:62
+#: src/components/routes/settings/notifications.tsx:63
 msgid "Failed to save settings"
 msgstr "ذخیره تنظیمات ناموفق بود"
 
-#: src/components/routes/settings/notifications.tsx:188
+#: src/components/routes/settings/notifications.tsx:189
 msgid "Failed to send test notification"
 msgstr "ارسال اعلان آزمایشی ناموفق بود"
 
@@ -351,8 +356,8 @@ msgstr "ارسال اعلان آزمایشی ناموفق بود"
 msgid "Failed to update alert"
 msgstr "به‌روزرسانی هشدار ناموفق بود"
 
-#: src/components/routes/system.tsx:596
-#: src/components/systems-table/systems-table.tsx:281
+#: src/components/routes/system.tsx:599
+#: src/components/systems-table/systems-table.tsx:326
 msgid "Filter..."
 msgstr "فیلتر..."
 
@@ -360,7 +365,7 @@ msgstr "فیلتر..."
 msgid "For <0>{min}</0> {min, plural, one {minute} other {minutes}}"
 msgstr "برای <0>{min}</0> {min, plural, one {دقیقه} other {دقیقه}}"
 
-#: src/components/login/auth-form.tsx:313
+#: src/components/login/auth-form.tsx:328
 msgid "Forgot password?"
 msgstr "رمز عبور را فراموش کرده‌اید؟"
 
@@ -370,15 +375,15 @@ msgstr "رمز عبور را فراموش کرده‌اید؟"
 msgid "General"
 msgstr "عمومی"
 
-#: src/components/routes/system.tsx:496
+#: src/components/routes/system.tsx:503
 msgid "GPU Power Draw"
 msgstr "مصرف برق پردازنده گرافیکی"
 
-#: src/components/systems-table/systems-table.tsx:308
+#: src/components/systems-table/systems-table.tsx:353
 msgid "Grid"
 msgstr "جدول"
 
-#: src/components/add-system.tsx:120
+#: src/components/add-system.tsx:157
 msgid "Host / IP"
 msgstr "میزبان / IP"
 
@@ -386,12 +391,12 @@ msgstr "میزبان / IP"
 msgid "If you've lost the password to your admin account, you may reset it using the following command."
 msgstr "اگر رمز عبور حساب مدیر خود را گم کرده‌اید، می‌توانید آن را با استفاده از دستور زیر بازنشانی کنید."
 
-#: src/components/login/auth-form.tsx:16
+#: src/components/login/auth-form.tsx:17
 msgid "Invalid email address."
 msgstr "آدرس ایمیل نامعتبر است."
 
 #. Linux kernel
-#: src/components/routes/system.tsx:262
+#: src/components/routes/system.tsx:264
 msgid "Kernel"
 msgstr "هسته"
 
@@ -399,7 +404,7 @@ msgstr "هسته"
 msgid "Language"
 msgstr "زبان"
 
-#: src/components/systems-table/systems-table.tsx:294
+#: src/components/systems-table/systems-table.tsx:339
 msgid "Layout"
 msgstr "طرح‌بندی"
 
@@ -408,7 +413,7 @@ msgstr "طرح‌بندی"
 msgid "Light"
 msgstr "روشن"
 
-#: src/components/navbar.tsx:104
+#: src/components/navbar.tsx:105
 msgid "Log Out"
 msgstr "خروج"
 
@@ -416,17 +421,17 @@ msgstr "خروج"
 msgid "Login"
 msgstr "ورود"
 
-#: src/components/login/auth-form.tsx:34
+#: src/components/login/auth-form.tsx:39
 #: src/components/login/forgot-pass-form.tsx:15
 msgid "Login attempt failed"
 msgstr "تلاش برای ورود ناموفق بود"
 
-#: src/components/command-palette.tsx:156
-#: src/components/navbar.tsx:85
+#: src/components/command-palette.tsx:157
+#: src/components/navbar.tsx:86
 msgid "Logs"
 msgstr "لاگ‌ها"
 
-#: src/components/routes/settings/notifications.tsx:80
+#: src/components/routes/settings/notifications.tsx:81
 msgid "Looking instead for where to create alerts? Click the bell <0/> icons in the systems table."
 msgstr "به دنبال جایی برای ایجاد هشدار هستید؟ روی آیکون‌های زنگ <0/> در جدول سیستم‌ها کلیک کنید."
 
@@ -434,56 +439,60 @@ msgstr "به دنبال جایی برای ایجاد هشدار هستید؟ ر�
 msgid "Manage display and notification preferences."
 msgstr "مدیریت تنظیمات نمایش و اعلان‌ها."
 
+#: src/components/add-system.tsx:225
+msgid "Manual setup instructions"
+msgstr ""
+
 #. Chart select field. Please try to keep this short.
-#: src/components/routes/system.tsx:628
+#: src/components/routes/system.tsx:629
 msgid "Max 1 min"
 msgstr "حداکثر ۱ دقیقه"
 
-#: src/components/systems-table/systems-table.tsx:168
+#: src/components/systems-table/systems-table.tsx:173
 msgid "Memory"
 msgstr "حافظه"
 
-#: src/components/routes/system.tsx:406
-#: src/lib/utils.ts:295
+#: src/components/routes/system.tsx:413
+#: src/lib/utils.ts:314
 msgid "Memory Usage"
 msgstr "میزان استفاده از حافظه"
 
-#: src/components/routes/system.tsx:417
+#: src/components/routes/system.tsx:424
 msgid "Memory usage of docker containers"
 msgstr "میزان استفاده از حافظه کانتینرهای داکر"
 
-#: src/components/add-system.tsx:116
+#: src/components/add-system.tsx:153
 msgid "Name"
 msgstr "نام"
 
-#: src/components/systems-table/systems-table.tsx:184
+#: src/components/systems-table/systems-table.tsx:198
 msgid "Net"
 msgstr "شبکه"
 
-#: src/components/routes/system.tsx:458
+#: src/components/routes/system.tsx:465
 msgid "Network traffic of docker containers"
 msgstr "ترافیک شبکه کانتینرهای داکر"
 
-#: src/components/routes/system.tsx:443
+#: src/components/routes/system.tsx:450
 msgid "Network traffic of public interfaces"
 msgstr "ترافیک شبکه رابط‌های عمومی"
 
-#: src/components/command-palette.tsx:49
+#: src/components/command-palette.tsx:50
 msgid "No results found."
 msgstr "هیچ نتیجه‌ای یافت نشد."
 
-#: src/components/systems-table/systems-table.tsx:429
-#: src/components/systems-table/systems-table.tsx:502
+#: src/components/systems-table/systems-table.tsx:474
+#: src/components/systems-table/systems-table.tsx:547
 msgid "No systems found."
 msgstr "هیچ سیستمی یافت نشد."
 
-#: src/components/command-palette.tsx:110
+#: src/components/command-palette.tsx:111
 #: src/components/routes/settings/layout.tsx:56
-#: src/components/routes/settings/notifications.tsx:74
+#: src/components/routes/settings/notifications.tsx:75
 msgid "Notifications"
 msgstr "اعلان‌ها"
 
-#: src/components/login/auth-form.tsx:284
+#: src/components/login/auth-form.tsx:299
 msgid "OAuth 2 / OIDC support"
 msgstr "پشتیبانی از OAuth 2 / OIDC"
 
@@ -491,11 +500,11 @@ msgstr "پشتیبانی از OAuth 2 / OIDC"
 msgid "On each restart, systems in the database will be updated to match the systems defined in the file."
 msgstr "در هر بار راه‌اندازی مجدد، سیستم‌های موجود در پایگاه داده با سیستم‌های تعریف شده در فایل مطابقت داده می‌شوند."
 
-#: src/components/systems-table/systems-table.tsx:536
+#: src/components/systems-table/systems-table.tsx:585
 msgid "Open menu"
 msgstr "باز کردن منو"
 
-#: src/components/login/auth-form.tsx:203
+#: src/components/login/auth-form.tsx:248
 msgid "Or continue with"
 msgstr "یا ادامه با"
 
@@ -503,32 +512,36 @@ msgstr "یا ادامه با"
 msgid "Overwrite existing alerts"
 msgstr "بازنویسی هشدارهای موجود"
 
-#: src/components/command-palette.tsx:84
+#: src/components/command-palette.tsx:85
 msgid "Page"
 msgstr "صفحه"
 
-#: src/components/command-palette.tsx:71
+#: src/components/command-palette.tsx:72
 msgid "Pages / Settings"
 msgstr "صفحات / تنظیمات"
 
-#: src/components/login/auth-form.tsx:147
-#: src/components/login/auth-form.tsx:152
+#: src/components/login/auth-form.tsx:192
+#: src/components/login/auth-form.tsx:197
 msgid "Password"
 msgstr "رمز عبور"
 
-#: src/components/login/auth-form.tsx:17
+#: src/components/login/auth-form.tsx:20
 msgid "Password must be at least 8 characters."
 msgstr "رمز عبور باید حداقل ۸ کاراکتر باشد."
+
+#: src/components/login/auth-form.tsx:21
+msgid "Password must be less than 72 bytes."
+msgstr ""
 
 #: src/components/login/forgot-pass-form.tsx:33
 msgid "Password reset request received"
 msgstr "درخواست بازنشانی رمز عبور دریافت شد"
 
-#: src/components/systems-table/systems-table.tsx:558
+#: src/components/systems-table/systems-table.tsx:618
 msgid "Pause"
 msgstr "توقف"
 
-#: src/components/routes/settings/notifications.tsx:95
+#: src/components/routes/settings/notifications.tsx:96
 msgid "Please <0>configure an SMTP server</0> to ensure alerts are delivered."
 msgstr "لطفاً برای اطمینان از تحویل هشدارها، یک <0>سرور SMTP پیکربندی کنید</0>."
 
@@ -536,7 +549,7 @@ msgstr "لطفاً برای اطمینان از تحویل هشدارها، یک
 msgid "Please check logs for more details."
 msgstr "لطفاً برای جزئیات بیشتر، لاگ‌ها را بررسی کنید."
 
-#: src/components/login/auth-form.tsx:35
+#: src/components/login/auth-form.tsx:40
 #: src/components/login/forgot-pass-form.tsx:16
 msgid "Please check your credentials and try again"
 msgstr "لطفاً اعتبارنامه‌های خود را بررسی کرده و دوباره تلاش کنید."
@@ -545,15 +558,15 @@ msgstr "لطفاً اعتبارنامه‌های خود را بررسی کرده
 msgid "Please create an admin account"
 msgstr "لطفاً یک حساب مدیر ایجاد کنید"
 
-#: src/components/login/auth-form.tsx:233
+#: src/components/login/auth-form.tsx:137
 msgid "Please enable pop-ups for this site"
 msgstr "لطفاً پنجره‌های بازشو را برای این سایت فعال کنید"
 
-#: src/lib/utils.ts:39
+#: src/lib/utils.ts:40
 msgid "Please log in again"
 msgstr "لطفاً دوباره وارد شوید"
 
-#: src/components/login/auth-form.tsx:292
+#: src/components/login/auth-form.tsx:307
 msgid "Please see <0>the documentation</0> for instructions."
 msgstr "لطفاً برای دستورالعمل‌ها به <0>مستندات</0> مراجعه کنید."
 
@@ -561,12 +574,12 @@ msgstr "لطفاً برای دستورالعمل‌ها به <0>مستندات</
 msgid "Please sign in to your account"
 msgstr "لطفاً به حساب کاربری خود وارد شوید"
 
-#: src/components/add-system.tsx:124
+#: src/components/add-system.tsx:169
 msgid "Port"
 msgstr "پورت"
 
-#: src/components/routes/system.tsx:407
-#: src/components/routes/system.tsx:523
+#: src/components/routes/system.tsx:414
+#: src/components/routes/system.tsx:530
 msgid "Precise utilization at the recorded time"
 msgstr "میزان دقیق استفاده در زمان ثبت شده"
 
@@ -575,7 +588,7 @@ msgid "Preferred Language"
 msgstr "زبان ترجیحی"
 
 #. Use 'Key' if your language requires many more characters
-#: src/components/add-system.tsx:128
+#: src/components/add-system.tsx:180
 msgid "Public Key"
 msgstr "کلید عمومی"
 
@@ -594,24 +607,28 @@ msgstr "دریافت شد"
 msgid "Reset Password"
 msgstr "بازنشانی رمز عبور"
 
-#: src/components/systems-table/systems-table.tsx:553
+#: src/components/systems-table/systems-table.tsx:613
 msgid "Resume"
 msgstr "ادامه"
 
-#: src/components/routes/settings/notifications.tsx:117
+#: src/components/routes/settings/notifications.tsx:118
 msgid "Save address using enter key or comma. Leave blank to disable email notifications."
 msgstr "آدرس را با استفاده از کلید Enter یا کاما ذخیره کنید. برای غیرفعال کردن اعلان‌های ایمیلی، خالی بگذارید."
 
 #: src/components/routes/settings/general.tsx:106
-#: src/components/routes/settings/notifications.tsx:167
+#: src/components/routes/settings/notifications.tsx:168
 msgid "Save Settings"
 msgstr "ذخیره تنظیمات"
 
-#: src/components/navbar.tsx:133
+#: src/components/add-system.tsx:230
+msgid "Save system"
+msgstr ""
+
+#: src/components/navbar.tsx:134
 msgid "Search"
 msgstr "جستجو"
 
-#: src/components/command-palette.tsx:46
+#: src/components/command-palette.tsx:47
 msgid "Search for systems or settings..."
 msgstr "جستجو برای سیستم‌ها یا تنظیمات..."
 
@@ -628,9 +645,9 @@ msgstr "ارسال شد"
 msgid "Sets the default time range for charts when a system is viewed."
 msgstr "بازه زمانی پیش‌فرض برای نمودارها هنگام مشاهده یک سیستم را تعیین می‌کند."
 
-#: src/components/command-palette.tsx:95
-#: src/components/command-palette.tsx:98
-#: src/components/command-palette.tsx:113
+#: src/components/command-palette.tsx:96
+#: src/components/command-palette.tsx:99
+#: src/components/command-palette.tsx:114
 #: src/components/routes/settings/layout.tsx:71
 #: src/components/routes/settings/layout.tsx:82
 msgid "Settings"
@@ -640,40 +657,40 @@ msgstr "تنظیمات"
 msgid "Settings saved"
 msgstr "تنظیمات ذخیره شد"
 
-#: src/components/login/auth-form.tsx:191
+#: src/components/login/auth-form.tsx:236
 msgid "Sign in"
 msgstr "ورود"
 
-#: src/components/command-palette.tsx:185
+#: src/components/command-palette.tsx:186
 msgid "SMTP settings"
 msgstr "تنظیمات SMTP"
 
-#: src/components/systems-table/systems-table.tsx:316
+#: src/components/systems-table/systems-table.tsx:361
 msgid "Sort By"
 msgstr "مرتب‌سازی بر اساس"
 
-#: src/lib/utils.ts:282
+#: src/lib/utils.ts:301
 msgid "Status"
 msgstr "وضعیت"
 
-#: src/components/routes/system.tsx:473
+#: src/components/routes/system.tsx:480
 msgid "Swap space used by the system"
 msgstr "فضای Swap استفاده شده توسط سیستم"
 
-#: src/components/routes/system.tsx:472
+#: src/components/routes/system.tsx:479
 msgid "Swap Usage"
 msgstr "میزان استفاده از Swap"
 
 #. System theme
 #: src/components/mode-toggle.tsx:26
-#: src/components/systems-table/systems-table.tsx:120
-#: src/components/systems-table/systems-table.tsx:128
-#: src/components/systems-table/systems-table.tsx:139
-#: src/components/systems-table/systems-table.tsx:473
+#: src/components/systems-table/systems-table.tsx:125
+#: src/components/systems-table/systems-table.tsx:133
+#: src/components/systems-table/systems-table.tsx:144
+#: src/components/systems-table/systems-table.tsx:518
 msgid "System"
 msgstr "سیستم"
 
-#: src/components/navbar.tsx:77
+#: src/components/navbar.tsx:78
 msgid "Systems"
 msgstr "سیستم‌ها"
 
@@ -681,32 +698,37 @@ msgstr "سیستم‌ها"
 msgid "Systems may be managed in a <0>config.yml</0> file inside your data directory."
 msgstr "سیستم‌ها ممکن است در یک فایل <0>config.yml</0> درون دایرکتوری داده شما مدیریت شوند."
 
-#: src/components/systems-table/systems-table.tsx:304
+#: src/components/systems-table/systems-table.tsx:349
 msgid "Table"
 msgstr "جدول"
 
-#: src/components/routes/system.tsx:484
-#: src/lib/utils.ts:314
+#. Temperature label in systems table
+#: src/components/systems-table/systems-table.tsx:218
+msgid "Temp"
+msgstr ""
+
+#: src/components/routes/system.tsx:491
+#: src/lib/utils.ts:333
 msgid "Temperature"
 msgstr "دما"
 
-#: src/components/routes/system.tsx:485
+#: src/components/routes/system.tsx:492
 msgid "Temperatures of system sensors"
 msgstr "دمای حسگرهای سیستم"
 
-#: src/components/routes/settings/notifications.tsx:211
+#: src/components/routes/settings/notifications.tsx:212
 msgid "Test <0>URL</0>"
 msgstr "تست <0>آدرس اینترنتی</0>"
 
-#: src/components/routes/settings/notifications.tsx:182
+#: src/components/routes/settings/notifications.tsx:183
 msgid "Test notification sent"
 msgstr "اعلان آزمایشی ارسال شد"
 
-#: src/components/add-system.tsx:108
+#: src/components/add-system.tsx:145
 msgid "The agent must be running on the system to connect. Copy the installation command for the agent below."
 msgstr "برای اتصال، عامل باید روی سیستم در حال اجرا باشد. دستور نصب عامل را از زیر کپی کنید."
 
-#: src/components/add-system.tsx:99
+#: src/components/add-system.tsx:136
 msgid "The agent must be running on the system to connect. Copy the<0>docker-compose.yml</0> for the agent below."
 msgstr "برای اتصال، عامل باید روی سیستم در حال اجرا باشد. <0>docker-compose.yml</0> مربوط به عامل را از زیر کپی کنید."
 
@@ -714,24 +736,24 @@ msgstr "برای اتصال، عامل باید روی سیستم در حال ا
 msgid "Then log into the backend and reset your user account password in the users table."
 msgstr "سپس وارد بخش پشتیبان شوید و رمز عبور حساب کاربری خود را در جدول کاربران بازنشانی کنید."
 
-#: src/components/systems-table/systems-table.tsx:581
+#: src/components/systems-table/systems-table.tsx:645
 msgid "This action cannot be undone. This will permanently delete all current records for {name} from the database."
 msgstr "این عمل قابل برگشت نیست. این کار تمام رکوردهای فعلی {name} را برای همیشه از پایگاه داده حذف خواهد کرد."
 
-#: src/components/routes/system.tsx:564
+#: src/components/routes/system.tsx:571
 msgid "Throughput of {extraFsName}"
 msgstr "توان عملیاتی {extraFsName}"
 
-#: src/components/routes/system.tsx:432
+#: src/components/routes/system.tsx:439
 msgid "Throughput of root filesystem"
 msgstr "توان عملیاتی سیستم فایل ریشه"
 
-#: src/components/routes/settings/notifications.tsx:106
+#: src/components/routes/settings/notifications.tsx:107
 msgid "To email(s)"
 msgstr "به ایمیل(ها)"
 
-#: src/components/routes/system.tsx:359
-#: src/components/routes/system.tsx:372
+#: src/components/routes/system.tsx:366
+#: src/components/routes/system.tsx:379
 msgid "Toggle grid"
 msgstr "تغییر نمایش جدول"
 
@@ -739,45 +761,45 @@ msgstr "تغییر نمایش جدول"
 msgid "Toggle theme"
 msgstr "تغییر تم"
 
-#: src/lib/utils.ts:317
+#: src/lib/utils.ts:336
 msgid "Triggers when any sensor exceeds a threshold"
 msgstr "هنگامی که هر حسگری از یک آستانه فراتر رود، فعال می‌شود"
 
-#: src/lib/utils.ts:310
+#: src/lib/utils.ts:329
 msgid "Triggers when combined up/down exceeds a threshold"
 msgstr "هنگامی که مجموع بالا/پایین از یک آستانه فراتر رود، فعال می‌شود"
 
-#: src/lib/utils.ts:292
+#: src/lib/utils.ts:311
 msgid "Triggers when CPU usage exceeds a threshold"
 msgstr "هنگامی که میزان استفاده از CPU از یک آستانه فراتر رود، فعال می‌شود"
 
-#: src/lib/utils.ts:298
+#: src/lib/utils.ts:317
 msgid "Triggers when memory usage exceeds a threshold"
 msgstr "هنگامی که میزان استفاده از حافظه از یک آستانه فراتر رود، فعال می‌شود"
 
-#: src/lib/utils.ts:285
+#: src/lib/utils.ts:304
 msgid "Triggers when status switches between up and down"
 msgstr "هنگامی که وضعیت بین بالا و پایین تغییر می‌کند، فعال می‌شود"
 
-#: src/lib/utils.ts:304
+#: src/lib/utils.ts:323
 msgid "Triggers when usage of any disk exceeds a threshold"
 msgstr "هنگامی که استفاده از هر دیسکی از یک آستانه فراتر رود، فعال می‌شود"
 
-#: src/components/systems-table/systems-table.tsx:277
+#: src/components/systems-table/systems-table.tsx:322
 msgid "Updated in real time. Click on a system to view information."
 msgstr "به صورت لحظه‌ای به‌روزرسانی می‌شود. برای مشاهده اطلاعات، روی یک سیستم کلیک کنید."
 
-#: src/components/routes/system.tsx:261
+#: src/components/routes/system.tsx:263
 msgid "Uptime"
 msgstr "آپتایم"
 
 #: src/components/charts/area-chart.tsx:73
-#: src/components/routes/system.tsx:514
-#: src/components/routes/system.tsx:551
+#: src/components/routes/system.tsx:521
+#: src/components/routes/system.tsx:558
 msgid "Usage"
 msgstr "میزان استفاده"
 
-#: src/components/routes/system.tsx:424
+#: src/components/routes/system.tsx:431
 msgid "Usage of root partition"
 msgstr "میزان استفاده از پارتیشن ریشه"
 
@@ -787,20 +809,20 @@ msgstr "میزان استفاده از پارتیشن ریشه"
 msgid "Used"
 msgstr "استفاده شده"
 
-#: src/components/command-palette.tsx:142
-#: src/components/navbar.tsx:69
+#: src/components/command-palette.tsx:143
+#: src/components/navbar.tsx:70
 msgid "Users"
 msgstr "کاربران"
 
-#: src/components/systems-table/systems-table.tsx:286
+#: src/components/systems-table/systems-table.tsx:331
 msgid "View"
 msgstr "مشاهده"
 
-#: src/components/systems-table/systems-table.tsx:350
+#: src/components/systems-table/systems-table.tsx:395
 msgid "Visible Fields"
 msgstr "فیلدهای قابل مشاهده"
 
-#: src/components/routes/system.tsx:662
+#: src/components/routes/system.tsx:663
 msgid "Waiting for enough records to display"
 msgstr "در انتظار رکوردهای کافی برای نمایش"
 
@@ -808,7 +830,7 @@ msgstr "در انتظار رکوردهای کافی برای نمایش"
 msgid "Want to help us make our translations even better? Check out <0>Crowdin</0> for more details."
 msgstr "می‌خواهید به ما کمک کنید تا ترجمه‌های خود را بهتر کنیم؟ برای جزئیات بیشتر به <0>Crowdin</0> مراجعه کنید."
 
-#: src/components/routes/settings/notifications.tsx:124
+#: src/components/routes/settings/notifications.tsx:125
 msgid "Webhook / Push notifications"
 msgstr "اعلان‌های Webhook / Push"
 

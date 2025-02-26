@@ -83,7 +83,7 @@ export default function ForgotPassword() {
 						<Trans>Command line instructions</Trans>
 					</button>
 				</DialogTrigger>
-				<DialogContent className="max-w-[33em]">
+				<DialogContent className="max-w-[41em]">
 					<DialogHeader>
 						<DialogTitle>
 							<Trans>Command line instructions</Trans>
@@ -98,7 +98,10 @@ export default function ForgotPassword() {
 						<Trans>Then log into the backend and reset your user account password in the users table.</Trans>
 					</p>
 					<code className="bg-muted rounded-sm py-0.5 px-2.5 me-auto text-sm">
-						beszel admin update youremail@example.com newpassword
+						./beszel superuser upsert user@example.com password
+					</code>
+					<code className="bg-muted rounded-sm py-0.5 px-2.5 me-auto text-sm">
+						docker exec beszel /beszel superuser upsert name@example.com password
 					</code>
 				</DialogContent>
 			</Dialog>

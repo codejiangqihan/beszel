@@ -1,5 +1,12 @@
 import { RecordModel } from "pocketbase"
 
+// global window properties
+declare global {
+	interface Window {
+		BASE_PATH: string
+	}
+}
+
 export interface SystemRecord extends RecordModel {
 	name: string
 	host: string
@@ -36,6 +43,10 @@ export interface SystemInfo {
 	v: string
 	/** system is using podman */
 	p?: boolean
+	/** highest gpu utilization */
+	g?: number
+	/** dashboard display temperature */
+	dt?: number
 }
 
 export interface SystemStats {

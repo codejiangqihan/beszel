@@ -1,9 +1,10 @@
 import PocketBase from "pocketbase"
-import { atom, map, WritableAtom } from "nanostores"
+import { atom, map, PreinitializedWritableAtom } from "nanostores"
 import { AlertRecord, ChartTimes, SystemRecord, UserSettings } from "@/types"
+import { basePath } from "@/components/router"
 
 /** PocketBase JS Client */
-export const pb = new PocketBase("/")
+export const pb = new PocketBase(basePath)
 
 /** Store if user is authenticated */
 export const $authenticated = atom(pb.authStore.isValid)
@@ -21,7 +22,10 @@ export const $publicKey = atom("")
 export const $hubVersion = atom("")
 
 /** Chart time period */
-export const $chartTime = atom("1h") as WritableAtom<ChartTimes>
+export const $chartTime = atom("1h") as PreinitializedWritableAtom<ChartTimes>
+
+/** Whether to display average or max chart values */
+export const $maxValues = atom(false)
 
 /** User settings */
 export const $userSettings = map<UserSettings>({
