@@ -12,7 +12,7 @@ require (
 	github.com/rhysd/go-github-selfupdate v1.2.3
 	github.com/shirou/gopsutil/v4 v4.25.1
 	github.com/spf13/cast v1.7.1
-	github.com/spf13/cobra v1.8.1
+	github.com/spf13/cobra v1.9.1
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/crypto v0.32.0
 	golang.org/x/exp v0.0.0-20250128182459-e0ece0dbea4c
